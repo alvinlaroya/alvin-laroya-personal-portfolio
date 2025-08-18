@@ -1,0 +1,85 @@
+{
+    "experiences": [
+        {
+            "position": "Frontend Developer (2022-June 2025) Contract",
+            "frontend": "Vue/Nuxt, Svelte/Sveltekit, Shadcn Svelte / TailwindCSS",
+            "backend": "Storefront, Shopify GraphQL, Knex.js, PostgreSQL, Drizzle ORM, Supabase",
+            "company": "Pilothouse Digital",
+            "address": "1011 Government St, Victoria, BC V8W 1X6, Canada",
+            "roles": [
+                {
+                    "task": "Engineered a Headless CMS E-commerce solution for Shopify stores, managing backend migrations and services.",
+                    "subtask": [
+                        "Incorporated an AI feature to generate a component store, utilizing Svelte-based components and Tailwind CSS for styling",
+                        "Convert the Liquid-based Shopify store into a modern JavaScript framework using SvelteKit for a lightweight and high-performance site.",
+                        "Developed a robust drag-and-drop functionality for seamlessly adding modules to site pages, including the homepage, collection pages, and product detail pages (PDP).",
+                        "Created multiple modules (components) for a store template, enhancing the homepage, collection pages, and product detail pages (PDP).",
+                        "Implemented comprehensive cart functionality using Svelte, integrating Shopify's Storefront GraphQL API to streamline data mutations.",
+                        "Established template theming with DaisyUI to bolster store branding.",
+                        "Integrated third-party Shopify libraries, including Rebuy for upselling functionalities and various review APIs.",
+                        "Designed and executed modules/component tests using vitest.",
+                        "Formulated storefront GraphQL queries and mutations for headless CMS architecture."
+                    ]
+                },
+                {
+                    "task": "Convert Liquid-based Shopify store into modern Javascript framework using Nuxt/Vue.",
+                    "subtask": [
+                        "Achieved pixel-perfect design conversion for the site using solely Nuxt, eliminating dependency on any CMS."
+                    ]
+                }
+            ]
+        },
+        {
+            "position": "Fullstack Developer (2021-2022) Fulltime",
+            "frontend": "React/Next.js/Material UI & Vue/Vuetify",
+            "backend": "JS-force/Salesforce, Node/Express",
+            "company": "ArchIntel Corp.",
+            "address": "#8245 Boone Blvd # 650, Tysons, VA 22182, Estados Unidos",
+            "roles": [
+                {
+                    "task": "Developed the frontend of the Chassis/System for a video interview platform to be used by seven users, including video editors.",
+                    "subtask": []
+                },
+                {
+                    "task": "Maintaining the chassis/system for social media chassis currently being used by the US team.",
+                    "subtask": []
+                },
+                {
+                    "task": "Developed a chassis/system for the company’s digital asset library (similar to Google Drive) facilitating the uploadinguploading and downloading of various asset types, such as images and videos.",
+                    "subtask": []
+                }
+            ]
+        },
+        {
+            "position": "Full Stack Developer (2020-2021) Fulltime",
+            "frontend": "Vue/Vuetify",
+            "backend": "Laravel API",
+            "company": "Elite Anywhere Corp.",
+            "address": "#82585 Showcase Pkwy Indio, CA 92203",
+            "roles": [
+                {
+                    "task": "Migrated the logistics web application from a Laravel Blade-based application to a Laravel Vue Single Page Application (SPA), enhancing user experience and performance.",
+                    "subtask": []
+                }
+            ]
+        },
+        {
+            "position": "Jr. Web Developer (2019-2020) Fulltime",
+            "frontend": "Vue/Nuxt/Vuetify, React Native",
+            "backend": "Firebase Firestore",
+            "company": "TaraPhilippines",
+            "address": "#2 Roman Ayson Rd,. Upper Bokawkan, Baguio City",
+            "roles": [
+                {
+                    "task": "Developed Skood (Admin Dashboard) Food Delivery App of Baguio City.",
+                    "subtask": [
+                        "Created dashboard for Admin (Company)",
+                        "Created dashboard for sellers (Restaurant owner)",
+                        "Created dashboard for riders (Delivery Rider)",
+                        "Developed Skood (server) for automatic backend dispatching of incoming orders"
+                    ]
+                }
+            ]
+        }
+    ]
+}
