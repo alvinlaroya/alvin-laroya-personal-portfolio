@@ -6,11 +6,13 @@ const informations = [
     },
     {
         icon: 'lucide:phone',
-        text: '+639388566223'
+        text: '+639388566223',
+        href: 'tel:+639388566223'
     },
     {
         icon: 'lucide:mail',
-        text: 'alvinreggaelaroya@gmail.com'
+        text: 'alvinreggaelaroya@gmail.com',
+        href: 'mailto:alvinreggaelaroya@gmail.com'
     },
     {
         icon: 'lucide:map-pin',
@@ -32,7 +34,7 @@ const informations = [
                     <div class="flex">
                         <Icon :name="info.icon" size="1rem" />
                     </div>
-                    <span class="text-sm">{{ info.text }}</span>
+                    <a :href="info.href" class="text-sm" :class="{ 'underline': info?.href }">{{ info.text }}</a>
                 </div>
                 <USeparator class="mt-3" />
                 <TechStack />

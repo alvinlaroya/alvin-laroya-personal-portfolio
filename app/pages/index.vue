@@ -19,5 +19,6 @@
                 <!-- <ContactMe /> -->
             </main>
         </div>
+        <Chat />
     </div>
 </template>
