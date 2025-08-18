@@ -27,7 +27,8 @@ const selectExperienceHandler = (value) => {
                     <h2 class="font-semibold text-lg">{{ selectedExperience.position }}</h2>
                     <div class="flex space-x-2 text-sm tracking-wide">
                         <h2 class="font-semibold">Company:</h2>
-                        <span class="text-gray-300">{{ selectedExperience.company }} - {{ selectedExperience.address }}</span>
+                        <span class="text-gray-300"><span class="text-primary">{{ selectedExperience.company }}</span> -
+                            {{ selectedExperience.address }}</span>
                     </div>
                     <div class="flex flex-col">
                         <h2 class="font-normal text-sm">Frontend:</h2>
@@ -48,11 +49,11 @@ const selectExperienceHandler = (value) => {
                         </div>
                     </div>
                     <div class="px-4 text-sm font-thin tracking-wide">
-                        <ol v-for="(role, roleIdx) in selectedExperience.roles" :key="roleIdx" class="list-decimal">
-                            <li>
+                        <ol class="list-decimal">
+                            <li v-for="(role, roleIdx) in selectedExperience.roles" :key="roleIdx" class="my-2">
                                 {{ role.task }}
-                                <ul v-for="(task, taskIdx) in role.subtask" :key="taskIdx" class="list-disc ml-9">
-                                    <li>{{ task }}</li>
+                                <ul class="list-disc ml-9">
+                                    <li v-for="(task, taskIdx) in role.subtask" :key="taskIdx" class="my-1">{{ task }}</li>
                                 </ul>
                             </li>
                         </ol>

@@ -6,40 +6,7 @@
                     <!-- Contact Form -->
                     <div>
                         <h3 class="text-xl font-bold mb-6">Get In Touch</h3>
-                        <form id="contactForm" class="space-y-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium mb-2">Name</label>
-                                <input type="text" id="name" name="name" required
-                                    class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                                    placeholder="Your full name">
-                            </div>
-
-                            <div>
-                                <label for="email" class="block text-sm font-medium mb-2">Email</label>
-                                <input type="email" id="email" name="email" required
-                                    class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                                    placeholder="your.email@example.com">
-                            </div>
-
-                            <div>
-                                <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
-                                <input type="text" id="subject" name="subject" required
-                                    class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                                    placeholder="Project inquiry, collaboration, etc.">
-                            </div>
-
-                            <div>
-                                <label for="message" class="block text-sm font-medium mb-2">Message</label>
-                                <textarea id="message" name="message" rows="5" required
-                                    class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-vertical"
-                                    placeholder="Tell me about your project or how I can help..."></textarea>
-                            </div>
-
-                            <button type="submit"
-                                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900">
-                                Send Message
-                            </button>
-                        </form>
+                        <ContactMe />
 
                         <!-- Success/Error Messages -->
                         <div id="formMessage" class="mt-4 hidden">
@@ -71,7 +38,7 @@
                                             <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                                         </svg>
                                     </div>
-                                    <span class="text-gray-300">your.email@example.com</span>
+                                    <span class="text-gray-300">alvinreggaelaroya@gmail.com</span>
                                 </div>
 
                                 <div class="flex items-center space-x-3">
@@ -82,7 +49,7 @@
                                                 clip-rule="evenodd" />
                                         </svg>
                                     </div>
-                                    <span class="text-gray-300">Your City, Country</span>
+                                    <span class="text-gray-300">La Union, Philippines</span>
                                 </div>
                             </div>
 
@@ -139,7 +106,8 @@
         </footer>
         <!-- Bottom Bar -->
         <div class="border-t border-gray-800 py-3 text-center">
-            <div class="flex max-w-screen-lg mx-auto flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+            <div
+                class="flex max-w-screen-lg mx-auto flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
                 <p class="text-gray-400 text-sm">
                     © 2025 Alvin Laroya. All rights reserved.
                 </p>

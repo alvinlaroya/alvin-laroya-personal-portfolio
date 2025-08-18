@@ -16,10 +16,14 @@ function showToast() {
                 <!-- Navigation Links -->
                 <div class="hidden md:block">
                     <div class="flex items-center space-x-4">
-                        <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Home</a>
-                        <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">About</a>
-                        <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Experience</a>
-                        <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Portfolio</a>
+                        <a href="#"
+                            class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Home</a>
+                        <a href="#"
+                            class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">About</a>
+                        <a href="#"
+                            class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Experience</a>
+                        <a href="#"
+                            class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Portfolio</a>
                     </div>
                 </div>
 
@@ -34,9 +38,10 @@ function showToast() {
                         <Icon name="lucide:linkedin" size="1.2rem" />
                     </a>
                     <button @click="showToast"
-                        class="bg-black ml-2 px-3 py-2 flex items-center rounded-lg text-sm font-medium hover:cursor-pointer">
+                        class="bg-primary text-black ml-2 px-3 py-2 flex items-center rounded-lg text-sm font-medium hover:cursor-pointer">
                         <Icon name="lucide:download" size="1rem" class="mr-2" /> Download CV
                     </button>
+                    <!-- <ColorModeButton /> -->
                 </div>
             </div>
         </div>
