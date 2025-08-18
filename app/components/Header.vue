@@ -1,3 +1,14 @@
+<script setup lang="ts">
+const toast = useToast()
+
+function showToast() {
+    toast.add({
+        title: "CV Downloaded!"
+    })
+}
+
+</script>
+
 <template>
     <nav class="sticky top-0 z-50 bg-[#021526]">
         <div class="max-w-screen-lg mx-auto">
@@ -7,23 +18,24 @@
                     <div class="flex items-center space-x-4">
                         <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Home</a>
                         <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Services</a>
-                        <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                        <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                        <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Portfolio</a>
                     </div>
                 </div>
 
                 <!-- Profile/User Menu -->
                 <div class="flex items-center">
-                    <button class="px-3 py-2 rounded-lg text-sm font-medium hover:cursor-pointer">
+                    <a href="https://github.com/alvinlaroya" target="_blank"
+                        class="px-3 py-2 rounded-lg text-sm font-medium hover:cursor-pointer">
                         <Icon name="lucide:github" size="1.2rem" />
-                    </button>
-                    <button class="px-3 py-2 rounded-lg text-sm font-medium hover:cursor-pointer">
+                    </a>
+                    <a href="https://www.linkedin.com/in/alvin-laroya-bb409a1a0/" target="_blank" class="px-3 py-2 rounded-lg text-sm font-medium hover:cursor-pointer">
                         <Icon name="lucide:linkedin" size="1.2rem" />
-                    </button>
-                    <button class="px-3 py-2 rounded-lg text-sm font-medium hover:cursor-pointer">
+                    </a>
+                    <a href="https://www.facebook.com/alvin.tsx/" target="_blank" class="px-3 py-2 rounded-lg text-sm font-medium hover:cursor-pointer">
                         <Icon name="lucide:facebook" size="1.2rem" />
-                    </button>
-                    <button
+                    </a>
+                    <button @click="showToast"
                         class="bg-black ml-2 px-3 py-2 flex items-center rounded-lg text-sm font-medium hover:cursor-pointer">
                         <Icon name="lucide:download" size="1rem" class="mr-2" /> Download CV
                     </button>

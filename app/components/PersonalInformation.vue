@@ -6,19 +6,26 @@
                     class="w-[150px] rounded-full" />
             </div>
             <div>
-                <h2 class="text-center text-xl mb-2">Alvin Laroya</h2>
+                <h2 class="text-center text-2xl mb-2">Alvin Laroya</h2>
                 <div class="flex space-x-3 items-center">
                     <div class="flex">
                         <Icon name="lucide:briefcase-business" size="1rem" />
                     </div>
                     <span class="text-sm">Software Developer</span>
                 </div>
-                <div class="flex space-x-3 items-center">
+                <div class="flex space-x-3 items-center mt-1">
+                    <div class="flex">
+                        <Icon name="lucide:phone" size="1rem" />
+                    </div>
+                    <span class="text-sm">+639388566223</span>
+                </div>
+                <div class="flex space-x-3 items-center mt-1 mb-3">
                     <div class="flex">
                         <Icon name="lucide:mail" size="1rem" />
                     </div>
                     <span class="text-sm">alvinreggaelaroya@gmail.com</span>
                 </div>
+                <USeparator />
                 <TechStack />
             </div>
         </div>

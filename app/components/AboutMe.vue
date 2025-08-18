@@ -7,9 +7,9 @@ const yearsOfExperience = computed(() => {
 </script>
 
 <template>
-    <div>
+    <div class="border border-gray-600 rounded-sm p-4">
         <h2 class="text-xl font-semibold">About Me</h2>
-        <p class="text-sm mt-3">
+        <p class="text-sm mt-3 text-gray-300">
             Results-driven Frontend Developer with {{ yearsOfExperience }}+ years of experience building modern,
             high-performance
             e-commerce platforms. Skilled in Vue/Nuxt, Svelte/SvelteKit, React/Next, and Tailwind CSS. Proven

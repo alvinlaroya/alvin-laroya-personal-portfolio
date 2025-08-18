@@ -11,25 +11,25 @@ const items = ref<TimelineItem[]>([
     {
         date: 'Mar 27, 2020',
         title: 'MERN Stack Development Training',
-        description: 'User research and design workshops. Created wireframes and prototypes for user testing.',
+        description: 'Completed intensive hands-on training focused on building full-stack web applications using MongoDB, Express.js, React, and Node.js, covering both frontend and backend development.',
         icon: 'i-lucide-code'
     },
     {
         date: 'Mar 10, 2019',
         title: 'ICT Summit',
-        description: 'Frontend and backend development. Implemented core features and integrated with APIs.',
+        description: 'Attended a professional summit highlighting the latest trends, innovations, and best practices in information and communications technology.',
         icon: 'i-lucide-code'
     },
     {
         date: 'Mar 08, 2019',
         title: 'Hackathon 2019',
-        description: 'Frontend and backend development. Implemented core features and integrated with APIs.',
+        description: 'Participated in a collaborative coding competition focused on developing innovative solutions within a limited timeframe.',
         icon: 'i-lucide-code'
     },
     {
         date: 'Mar 05, 2019',
         title: 'Web Design Technology 10th La Union Provincial Skills Olympics 2019',
-        description: 'QA testing and performance optimization. Deployed the application to production.',
+        description: 'Competed in creating responsive and user-friendly web designs, showcasing technical and creative skills in front-end development.',
         icon: 'i-lucide-code'
     }
 ])

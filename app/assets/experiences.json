@@ -5,7 +5,7 @@
             "frontend": "Vue/Nuxt, Svelte/Sveltekit, Shadcn Svelte / TailwindCSS",
             "backend": "Storefront, Shopify GraphQL, Knex.js, PostgreSQL, Drizzle ORM, Supabase",
             "company": "Pilothouse Digital",
-            "address": "1011 Government St, Victoria, BC V8W 1X6, Canada",
+            "address": "#1011 Government St, Victoria, BC V8W 1X6, Canada",
             "roles": [
                 {
                     "task": "Engineered a Headless CMS E-commerce solution for Shopify stores, managing backend migrations and services.",
