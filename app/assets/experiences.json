@@ -1,7 +1,7 @@
 {
     "experiences": [
         {
-            "position": "Frontend Developer (2022-June 2025) Contract",
+            "position": "Frontend Developer (2022-June 2025) - Contract",
             "frontend": "Vue/Nuxt, Svelte/Sveltekit, Shadcn Svelte / TailwindCSS",
             "backend": "Storefront, Shopify GraphQL, Knex.js, PostgreSQL, Drizzle ORM, Supabase",
             "company": "Pilothouse Digital",
@@ -30,7 +30,7 @@
             ]
         },
         {
-            "position": "Fullstack Developer (2021-2022) Fulltime",
+            "position": "Fullstack Developer (2021-2022) - Fulltime",
             "frontend": "React/Next.js/Material UI & Vue/Vuetify",
             "backend": "JS-force/Salesforce, Node/Express",
             "company": "ArchIntel Corp.",
@@ -51,7 +51,7 @@
             ]
         },
         {
-            "position": "Full Stack Developer (2020-2021) Fulltime",
+            "position": "Full Stack Developer (2020-2021) - Fulltime",
             "frontend": "Vue/Vuetify",
             "backend": "Laravel API",
             "company": "Elite Anywhere Corp.",
@@ -64,7 +64,7 @@
             ]
         },
         {
-            "position": "Jr. Web Developer (2019-2020) Fulltime",
+            "position": "Jr. Web Developer (2019-2020) - Fulltime",
             "frontend": "Vue/Nuxt/Vuetify, React Native",
             "backend": "Firebase Firestore",
             "company": "TaraPhilippines",

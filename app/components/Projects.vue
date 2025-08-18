@@ -11,12 +11,22 @@ const projects = [
         src: '/projects/journee.webp',
         link: 'https://journeecollection.com/collections/all',
         title: 'Journee Collection Store'
+    },
+    {
+        src: '/projects/brett-tech.webp',
+        link: 'https://brett-tech-store.netlify.app/collections/frontpage',
+        title: 'Brett Tech Store'
+    },
+    {
+        src: '/projects/journee.webp',
+        link: 'https://journeecollection.com/collections/all',
+        title: 'Journee Collection Store'
     }
 ]
 </script>
 
 <template>
-    <div>
+    <div id="portfolio">
         <h2 class="text-xl font-semibold">Portfolio</h2>
         <div class="text-sm mt-3 grid grid-cols-1 lg:grid-cols-2 gap-4">
             <!-- Card 1 -->
@@ -48,7 +58,7 @@ const projects = [
                         <div
                             class="transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-400">
                             <a :href="project.link" target="_blank"
-                                class="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg text-sm font-medium hover:from-purple-600 hover:to-pink-600 transition-colors duration-200 shadow-lg">
+                                class="px-6 py-3 bg-primary text-black rounded-lg text-sm font-medium hover:bg-black hover:text-white duration-200 shadow-lg">
                                 Explore Now
                             </a>
                         </div>

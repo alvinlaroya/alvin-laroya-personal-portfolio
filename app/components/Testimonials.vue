@@ -17,11 +17,11 @@ const testimonials = [
 
 <template>
     <div>
-        <div class="container mx-auto px-4">
-            <h2 data-aos="fade-up" class="text-3xl font-bold text-center mb-4">
+        <div class="container">
+            <h2 data-aos="fade-up" class="text-xl font-semibold mb-1">
                 Testimonials
             </h2>
-            <p data-aos="fade-up" data-aos-delay="100" class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            <p data-aos="fade-up" data-aos-delay="100" class="text-gray-600 mb-12">
                 What people say about working with me
             </p>
 

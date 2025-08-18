@@ -16,10 +16,10 @@ function showToast() {
                 <!-- Navigation Links -->
                 <div class="hidden md:block">
                     <div class="flex items-center space-x-4">
-                        <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                        <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Experience</a>
-                        <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Portfolio</a>
+                        <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Home</a>
+                        <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">About</a>
+                        <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Experience</a>
+                        <a href="#" class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Portfolio</a>
                     </div>
                 </div>
 
@@ -29,11 +29,9 @@ function showToast() {
                         class="px-3 py-2 rounded-lg text-sm font-medium hover:cursor-pointer">
                         <Icon name="lucide:github" size="1.2rem" />
                     </a>
-                    <a href="https://www.linkedin.com/in/alvin-laroya-bb409a1a0/" target="_blank" class="px-3 py-2 rounded-lg text-sm font-medium hover:cursor-pointer">
+                    <a href="https://www.linkedin.com/in/alvin-laroya-bb409a1a0/" target="_blank"
+                        class="px-3 py-2 rounded-lg text-sm font-medium hover:cursor-pointer">
                         <Icon name="lucide:linkedin" size="1.2rem" />
-                    </a>
-                    <a href="https://www.facebook.com/alvin.tsx/" target="_blank" class="px-3 py-2 rounded-lg text-sm font-medium hover:cursor-pointer">
-                        <Icon name="lucide:facebook" size="1.2rem" />
                     </a>
                     <button @click="showToast"
                         class="bg-black ml-2 px-3 py-2 flex items-center rounded-lg text-sm font-medium hover:cursor-pointer">
