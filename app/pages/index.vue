@@ -13,9 +13,6 @@
                 <Projects />
                 <USeparator />
                 <Testimonials />
-                <ClientOnly>
-                    <GithubCalendar />
-                </ClientOnly>
                 <!-- <ContactMe /> -->
             </main>
         </div>

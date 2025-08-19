@@ -1,15 +1,15 @@
 <script setup>
 const testimonials = [
     {
-        text: "Ang pogi talaga ni Alvin. Sarap nya. katrabaho",
+        text: "Working with Alvin has always been a great experience. He’s a reliable and collaborative developer who consistently brings creative solutions to the table. His strong problem-solving skills and willingness to help teammates make him a valuable asset to any project or team.",
         author: "Jonjie Viduya",
-        position: "Tech Lead, Tech Corp",
+        position: "Sr. Fullstack Developer, Pen Brothers",
         avatar: "/profile.webp",
     },
     {
         text: "Great problem-solver and team player. Always goes above and beyond.",
-        author: "John Smith",
-        position: "Project Manager, Digital Solutions",
+        author: "Lawrence Bonilla",
+        position: "Frontend Develope, Pilothouse Digital",
         avatar: "/profile.webp",
     },
 ]; 

@@ -1,6 +1,4 @@
 <script setup>
-import { NuxtLink } from '#components';
-
 const projects = [
     {
         src: '/projects/brett-tech.webp',
