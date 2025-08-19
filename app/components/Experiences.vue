@@ -29,7 +29,7 @@ function capitalize(str) {
                 </div>
             </div>
             <div class="flex justify-between">
-                <UAvatarGroup size="xs" class="mt-2">
+                <UAvatarGroup size="xs" :max="4" class="mt-2">
                     <UTooltip v-for="stack in exp.stacks" :text="stack">
                         <img :src="`/svg/${stack}.svg`" class="h-5 w-5" :alt="stack" />
                     </UTooltip>
