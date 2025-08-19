@@ -116,7 +116,7 @@ const handleKeyPress = (event) => {
             enter-from-class="scale-95 opacity-0" enter-to-class="scale-100 opacity-100"
             leave-from-class="scale-100 opacity-100" leave-to-class="scale-95 opacity-0">
             <div v-show="isOpen"
-                class="absolute bottom-20 right-0 w-96 h-[30rem] bg-white rounded-lg shadow-2xl transform origin-bottom-right">
+                class="absolute bottom-20 -right-6 lg:right-0 w-screen lg:w-96 h-[30rem] bg-white rounded-lg shadow-2xl transform origin-bottom-right">
                 <!-- Header -->
                 <div class="bg-blue-600 text-white p-4 flex items-center rounded-t-lg">
                     <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
