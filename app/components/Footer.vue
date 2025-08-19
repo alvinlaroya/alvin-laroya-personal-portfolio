@@ -85,8 +85,7 @@
                                         class="block text-gray-300 hover:text-white transition-colors duration-200">About</a>
                                     <a href="#portfolio"
                                         class="block text-gray-300 hover:text-white transition-colors duration-200">Portfolio</a>
-                                    <a href="#resume"
-                                        class="block text-gray-300 hover:text-white transition-colors duration-200">Resume</a>
+                                    <DownloadCv />
                                 </div>
                             </div>
                         </div>
