@@ -7,6 +7,10 @@ const selectExperienceHandler = (value) => {
     openDrawer.value = true;
 }
 const closeDrawer = () => openDrawer.value = !openDrawer.value;
+
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
 </script>
 
 <template>
@@ -44,20 +48,14 @@ const closeDrawer = () => openDrawer.value = !openDrawer.value;
                             {{ selectedExperience.address }}</span>
                     </div>
                     <div class="flex flex-col">
-                        <h2 class="font-normal text-sm">Frontend:</h2>
-                        <div class="flex flex-row space-x-2 mt-1 flex-wrap gap-y-2">
-                            <div v-for="(stack, stackIdx) in selectedExperience.frontend.split(',')" :key="stackIdx"
-                                class="bg-primary text-black font-semibold text-xs text-nowrap px-3 py-1 rounded-sm">
-                                {{ stack }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col">
-                        <h2 class="font-normal text-sm">Backend:</h2>
-                        <div class="flex flex-row space-x-2 mt-1 flex-wrap gap-y-2">
-                            <div v-for="(stack, stackIdx) in selectedExperience.backend.split(',')" :key="stackIdx"
-                                class="bg-primary text-black font-semibold text-xs px-3 py-1 rounded-sm text-nowrap">
-                                {{ stack }}
+                        <h2 class="font-normal text-sm">Technologies Stack:</h2>
+                        <div class="flex flex-row space-x-2 flex-wrap gap-y-2 mt-2">
+                            <div v-for="(stack, stackIdx) in selectedExperience.stacks" :key="stackIdx"
+                                class="bg-transparent text-whte border border-gray-500 font-semibold text-xs text-nowrap flex space-x-2 px-2 py-1 rounded-md">
+                                <div v-if="stack !== undefined" class="flex">
+                                    <img :src="`/svg/${stack}.svg`" class="w-4 h-4" alt="">
+                                </div>
+                                <span>{{ capitalize(stack) }}</span>
                             </div>
                         </div>
                     </div>

@@ -88,7 +88,7 @@
             "backend": "Firebase Firestore",
             "company": "TaraPhilippines",
             "address": "#2 Roman Ayson Rd,. Upper Bokawkan, Baguio City",
-            "stacks": ["vue", "react", "node", "firebase"],
+            "stacks": ["vue", "nuxt", "react", "node", "firebase"],
             "roles": [
                 {
                     "task": "Developed Skood (Admin Dashboard) Food Delivery App of Baguio City.",
