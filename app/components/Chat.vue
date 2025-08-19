@@ -155,11 +155,7 @@ const handleKeyPress = (event) => {
                         <template v-else>
                             <div
                                 class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
+                                <UAvatar src="/profile.webp" />
                             </div>
                             <div class="bg-gray-100 rounded-lg p-2 max-w-xs">
                                 <p class="text-gray-800 text-sm">{{ msg.message }}</p>
