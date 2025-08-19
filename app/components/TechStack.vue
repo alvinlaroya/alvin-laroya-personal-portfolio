@@ -1,4 +1,6 @@
 <script setup>
+const search = ref('');
+
 const frontendStacks = [
     {
         name: "Vue.js",
@@ -34,13 +36,30 @@ const frontendStacks = [
         name: "Zod",
         svg: "/svg/zod.svg"
     }, {
-        name: "OpenAPI",
-        svg: "/svg/openapi.svg"
-    }, {
         name: "Postman",
         svg: "/svg/postman.svg"
     }
 ]
+
+const filteredFrontend = computed(() => {
+    if (!search.value) {
+        return frontendStacks; // Return all items when search is empty
+    }
+
+    return frontendStacks.filter(stack =>
+        stack.name.toLowerCase().includes(search.value.toLowerCase())
+    );
+});
+
+const filteredBackend = computed(() => {
+    if (!search.value) {
+        return backendStacks; // Return all items when search is empty
+    }
+
+    return backendStacks.filter(stack =>
+        stack.name.toLowerCase().includes(search.value.toLowerCase())
+    );
+});
 
 const backendStacks = [
     {
@@ -85,51 +104,63 @@ const backendStacks = [
 
 const aiStacks = [
     {
-        name: "OpenAI"
+        name: "OpenAI",
+        svg: "/svg/openai.svg"
     }, {
         name: "Antrophic"
     }, {
-        name: "N8n AI Automation"
+        name: "N8n AI Automation",
+        svg: "/svg/n8n.svg"
     }
 ]
 </script>
 
 <template>
     <div class="">
-        <h2 class="text-xl font-semibold">Tech Stack:</h2>
-        <div class="p-3 border border-gray-500 rounded-md mt-3">
+        <div class="flex flex-col lg:flex-row justify-between">
+            <h2 class="text-xl font-semibold">Tech Stack:</h2>
+            <UInput v-model="search" class="mt-2 lg:mt-0" icon="i-lucide-search" size="md" variant="outline"
+                placeholder="Search..." />
+        </div>
+        <div class="mt-3">
             <div>
                 <h2 class="font-semibold text-sm">Frontend Technologies:</h2>
-                <div class="flex flex-wrap mt-2 gap-1.5">
-                    <div v-for="stack in frontendStacks"
-                        class="flex space-x-2 border px-2 py-1 rounded-md text-xs  items-center">
+                <div v-if="filteredFrontend.length > 0" class="flex flex-wrap mt-2 gap-1.5">
+                    <div v-for="stack in filteredFrontend"
+                        class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs  items-center">
                         <div v-if="stack?.svg !== undefined" class="flex">
                             <img :src="stack.svg" class="w-4 h-4" alt="">
                         </div>
                         <span>{{ stack.name }}</span>
                     </div>
                 </div>
+                <div v-else>
+                    <span class="text-sm text-gray-500">No Results</span>
+                </div>
             </div>
             <div class="mt-3">
                 <h2 class="font-semibold text-sm">Backend Technologies:</h2>
-                <div class="flex flex-wrap mt-2 gap-1.5">
-                    <div v-for="stack in backendStacks"
-                        class="flex space-x-2 border px-2 py-1 rounded-md text-xs  items-center">
+                <div v-if="filteredBackend.length > 0" class="flex flex-wrap mt-2 gap-1.5">
+                    <div v-for="stack in filteredBackend"
+                        class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs  items-center">
                         <div v-if="stack?.svg !== undefined" class="flex">
                             <img :src="stack.svg" class="w-4 h-4" alt="">
                         </div>
                         <span>{{ stack.name }}</span>
                     </div>
+                </div>
+                <div v-else>
+                    <span class="text-sm text-gray-500">No Results</span>
                 </div>
             </div>
             <div class="mt-3">
                 <h2 class="font-semibold text-sm">AI/LLM Tools:</h2>
                 <div class="flex flex-wrap mt-2 gap-1.5">
                     <div v-for="stack in aiStacks"
-                        class="flex space-x-2 bg-[#0A253D] px-2 py-1 rounded-md text-xs  items-center">
-                        <!-- <div class="flex">
-                        <Icon name="lucide:code" size="1rem" />
-                    </div> -->
+                        class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs  items-center">
+                        <div v-if="stack?.svg !== undefined" class="flex">
+                            <img :src="stack.svg" class="w-4 h-4" alt="">
+                        </div>
                         <span>{{ stack.name }}</span>
                     </div>
                 </div>
