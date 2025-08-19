@@ -48,7 +48,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
             toast.add({
                 title: 'Success',
                 description: 'Your message has been sent successfully!',
-                color: 'green'
+                color: 'primary'
             });
 
             // Reset form after successful submission
