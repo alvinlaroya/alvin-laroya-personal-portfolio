@@ -15,6 +15,10 @@ const informations = [
         href: 'mailto:alvinreggaelaroya@gmail.com'
     },
     {
+        icon: 'lucide:graduation-cap',
+        text: 'Computer Science'
+    },
+    {
         icon: 'lucide:map-pin',
         text: 'Agoo, La Union, Philippines'
     },
