@@ -19,10 +19,7 @@ const closeDrawer = () => openDrawer.value = !openDrawer.value;
                 <span>{{ exp.company }} - {{ exp.address }}</span>
             </div>
             <div class="flex justify-between">
-                <UButton @click="selectExperienceHandler(exp)" trailing-icon="i-lucide-arrow-right"
-                    class="cursor-pointer mt-1" size="sm">View More
-                </UButton>
-                <UAvatarGroup size="xs" :max="3">
+                <UAvatarGroup size="xs" :max="3" class="mt-2">
                     <UAvatar src="https://logospng.org/download/vue.js/vue-js-1536.png" alt="Benjamin Canac" />
                     <UAvatar src="https://seeklogo.com/images/N/nuxt-logo-1CCC5F38FD-seeklogo.com.png"
                         alt="Romain Hamel" />
@@ -31,6 +28,9 @@ const closeDrawer = () => openDrawer.value = !openDrawer.value;
                     <UAvatar src="https://logos-world.net/wp-content/uploads/2020/11/Shopify-Emblem.png"
                         alt="Neil Richter" />
                 </UAvatarGroup>
+                <UButton @click="selectExperienceHandler(exp)" trailing-icon="i-lucide-arrow-right"
+                    class="cursor-pointer mt-1" size="sm">View More
+                </UButton>
             </div>
         </div>
         <UDrawer direction="right" v-model:open="openDrawer" :handle="false" inset>
