@@ -27,7 +27,7 @@ const testimonials = [
 
             <div class="grid md:grid-cols-2 gap-8">
                 <div v-for="(testimonial, i) in testimonials" data-aos="fade-up" :data-aos-delay="i * 200"
-                    class="bg-gradient-to-br from-neutral-50 to-neutral-100 rounded-2xl py-4 px-7 shadow-md hover:shadow-lg transition-shadow relative">
+                    class="bg-[#03101d] rounded-2xl py-4 px-7 shadow-md hover:shadow-lg transition-shadow relative justify-between flex flex-col">
                     <!-- Quote Icon -->
                     <div
                         class="absolute -top-4 -left-4 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white">
@@ -38,7 +38,7 @@ const testimonials = [
                     </div>
 
                     <!-- Testimonial Text -->
-                    <p class="text-neutral-700 text-xs leading-relaxed mb-6">
+                    <p class="text-gray-400 text-xs leading-relaxed mb-6">
                         "{{ testimonial.text }}"
                     </p>
 
@@ -49,10 +49,10 @@ const testimonials = [
                                 loading="lazy" />
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm text-neutral-900">
+                            <h4 class="font-semibold text-sm text-white">
                                 {{ testimonial.author }}
                             </h4>
-                            <p class="text-neutral-600 text-xs">{{ testimonial.position }}</p>
+                            <p class="text-gray-400 text-xs">{{ testimonial.position }}</p>
                         </div>
                     </div>
                 </div>

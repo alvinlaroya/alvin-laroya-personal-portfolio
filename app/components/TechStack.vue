@@ -27,6 +27,9 @@ const frontendStacks = [
         name: "Shadcn UI",
         svg: "/svg/shadcn.svg"
     }, {
+        name: "Material UI",
+        svg: "/svg/materialui.svg"
+    }, {
         name: "Pinia/Vuex",
         svg: "/svg/pinia.svg"
     }, {
@@ -131,7 +134,7 @@ const aiStacks = [
                         <div v-if="stack?.svg !== undefined" class="flex">
                             <img :src="stack.svg" class="w-4 h-4" alt="">
                         </div>
-                        <span>{{ stack.name }}</span>
+                        <span class="text-gray-400">{{ stack.name }}</span>
                     </div>
                 </div>
                 <div v-else>
@@ -146,7 +149,7 @@ const aiStacks = [
                         <div v-if="stack?.svg !== undefined" class="flex">
                             <img :src="stack.svg" class="w-4 h-4" alt="">
                         </div>
-                        <span>{{ stack.name }}</span>
+                        <span class="text-gray-400">{{ stack.name }}</span>
                     </div>
                 </div>
                 <div v-else>
@@ -161,7 +164,7 @@ const aiStacks = [
                         <div v-if="stack?.svg !== undefined" class="flex">
                             <img :src="stack.svg" class="w-4 h-4" alt="">
                         </div>
-                        <span>{{ stack.name }}</span>
+                        <span class="text-gray-400">{{ stack.name }}</span>
                     </div>
                 </div>
             </div>

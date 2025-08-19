@@ -36,6 +36,7 @@ const informations = [
                     </div>
                     <a :href="info.href" class="text-sm" :class="{ 'underline': info?.href }">{{ info.text }}</a>
                 </div>
+                <!--  <SpotifyLastPlayed /> -->
                 <USeparator class="mt-3 hidden lg:block" />
             </div>
         </div>
