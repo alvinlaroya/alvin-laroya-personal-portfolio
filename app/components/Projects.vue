@@ -21,10 +21,10 @@ const projects = [
         <div class="text-sm mt-3 grid grid-cols-1 lg:grid-cols-2 gap-4">
             <!-- Card 1 -->
             <div v-for="(project, idx) in projects" :key="idx"
-                class="group relative h-70 rounded-xl shadow-2xl overflow-hidden cursor-pointer transform transition-all duration-500 hover:shadow-3xl">
+                class="group relative h-54 rounded-xl shadow-2xl overflow-hidden cursor-pointer transform transition-all duration-500 hover:shadow-3xl">
                 <!-- Image Container with overlay content -->
                 <div class="relative w-full h-full overflow-hidden">
-                    <NuxtImg :src="project.src" fit="cover" alt="profile-image" width="300" height="300"
+                    <NuxtImg :src="project.src" fit="cover" alt="profile-image" width="500" height="300"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
 
                     <!-- Dark overlay that appears on hover -->
@@ -35,11 +35,11 @@ const projects = [
                     <!-- Content overlay -->
                     <div class="absolute inset-0 flex flex-col justify-center items-center text-white p-6 text-center">
                         <h3
-                            class="text-2xl font-bold mb-3 transform translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-200">
+                            class="text-xl font-bold mb-3 transform translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-200">
                             {{ project.title }}
                         </h3>
                         <p
-                            class="text-sm leading-relaxed mb-6 transform translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-600 delay-300">
+                            class="text-xs leading-relaxed mb-6 transform translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-600 delay-300">
                             {{ project.description }}
                         </p>
 

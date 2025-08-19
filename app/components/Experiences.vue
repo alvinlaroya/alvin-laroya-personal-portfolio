@@ -18,9 +18,20 @@ const closeDrawer = () => openDrawer.value = !openDrawer.value;
                 <h2 class="font-semibold">Company:</h2>
                 <span>{{ exp.company }} - {{ exp.address }}</span>
             </div>
-            <UButton @click="selectExperienceHandler(exp)" trailing-icon="i-lucide-arrow-right"
-                class="cursor-pointer mt-1" size="sm">View More
-            </UButton>
+            <div class="flex justify-between">
+                <UButton @click="selectExperienceHandler(exp)" trailing-icon="i-lucide-arrow-right"
+                    class="cursor-pointer mt-1" size="sm">View More
+                </UButton>
+                <UAvatarGroup size="xs" :max="3">
+                    <UAvatar src="https://logospng.org/download/vue.js/vue-js-1536.png" alt="Benjamin Canac" />
+                    <UAvatar src="https://seeklogo.com/images/N/nuxt-logo-1CCC5F38FD-seeklogo.com.png"
+                        alt="Romain Hamel" />
+                    <UAvatar src="https://cdn.thenewstack.io/media/2021/09/9969f494-sveltelogo.png"
+                        alt="Neil Richter" />
+                    <UAvatar src="https://logos-world.net/wp-content/uploads/2020/11/Shopify-Emblem.png"
+                        alt="Neil Richter" />
+                </UAvatarGroup>
+            </div>
         </div>
         <UDrawer direction="right" v-model:open="openDrawer" :handle="false" inset>
             <template #content>
