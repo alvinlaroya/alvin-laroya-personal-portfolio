@@ -1,3 +1,14 @@
+<script setup>
+function scrollToSection(section, offset = 0) {
+    const element = document.getElementById(section);
+    const y = element.getBoundingClientRect().top + window.scrollY + offset;
+    window.scrollTo({
+        top: y,
+        behavior: "smooth"
+    });
+}
+</script>
+
 <template>
     <nav class="sticky top-0 z-50 bg-[#021526]">
         <div class="max-w-screen-lg mx-auto">
@@ -9,7 +20,7 @@
                             class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">About</a>
                         <a href="#"
                             class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Experience</a>
-                        <a href="#"
+                        <a href="#" @click="scrollToSection('portfolio', -80)"
                             class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Portfolio</a>
                     </div>
                 </div>

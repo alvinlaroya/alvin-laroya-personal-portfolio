@@ -94,7 +94,8 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
                     :disabled="isSubmitting" />
             </UFormField>
 
-            <UButton type="submit" :loading="isSubmitting" :disabled="isSubmitting">
+            <UButton type="submit" class="w-full flex items-center justify-center cursor-pointer" size="xl"
+                :loading="isSubmitting" :disabled="isSubmitting">
                 {{ isSubmitting ? 'Sending...' : 'Send Message' }}
             </UButton>
         </UForm>
