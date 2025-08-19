@@ -26,7 +26,7 @@ const informations = [
         <div class="flex flex-row lg:flex-col space-x-4 p-4 w-full space-y-4 tracking-wide">
             <div class="flex justify-center items-center">
                 <NuxtImg src="/profile.webp" fit="cover" alt="profile-image" width="300" height="300"
-                    class="w-[150px] rounded-full" />
+                    class="w-[130px] lg:w-[200px] rounded-full" />
             </div>
             <div class="flex flex-col justify-center">
                 <h2 class="text-left lg:text-center text-xl lg:text-2xl mb-2 font-semibold">Alvin Laroya</h2>
