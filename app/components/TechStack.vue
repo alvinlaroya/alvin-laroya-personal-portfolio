@@ -16,6 +16,10 @@ const frontendStacks = [
         name: "Pinia/Vuex"
     }, {
         name: "Redux/Zustand"
+    }, {
+        name: "OpenAPI"
+    }, {
+        name: "Postman"
     }
 ]
 
@@ -46,12 +50,22 @@ const backendStacks = [
         name: "Storefront API"
     }
 ]
+
+const aiStacks = [
+    {
+        name: "OpenAI"
+    }, {
+        name: "Antrophic"
+    }, {
+        name: "N8n AI Automation"
+    }
+]
 </script>
 
 <template>
     <div class="my-2">
         <div>
-            <h2 class="font-semibold text-sm">Frontend Stack:</h2>
+            <h2 class="font-semibold text-sm">Frontend Technologies:</h2>
             <div class="flex flex-wrap mt-2 gap-1.5">
                 <div v-for="stack in frontendStacks"
                     class="flex space-x-2 bg-[#0A253D] px-2 py-1 rounded-md text-xs  items-center">
@@ -63,9 +77,21 @@ const backendStacks = [
             </div>
         </div>
         <div class="mt-3">
-            <h2 class="font-semibold text-sm">Backend Stack:</h2>
+            <h2 class="font-semibold text-sm">Backend Technologies:</h2>
             <div class="flex flex-wrap mt-2 gap-1.5">
                 <div v-for="stack in backendStacks"
+                    class="flex space-x-2 bg-[#0A253D] px-2 py-1 rounded-md text-xs  items-center">
+                    <!-- <div class="flex">
+                        <Icon name="lucide:code" size="1rem" />
+                    </div> -->
+                    <span>{{ stack.name }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="mt-3">
+            <h2 class="font-semibold text-sm">AI/LLM Tools:</h2>
+            <div class="flex flex-wrap mt-2 gap-1.5">
+                <div v-for="stack in aiStacks"
                     class="flex space-x-2 bg-[#0A253D] px-2 py-1 rounded-md text-xs  items-center">
                     <!-- <div class="flex">
                         <Icon name="lucide:code" size="1rem" />

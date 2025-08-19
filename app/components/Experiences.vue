@@ -6,6 +6,7 @@ const selectExperienceHandler = (value) => {
     selectedExperience.value = value;
     openDrawer.value = true;
 }
+const closeDrawer = () => openDrawer.value = !openDrawer.value;
 </script>
 
 <template>
@@ -24,6 +25,11 @@ const selectExperienceHandler = (value) => {
         <UDrawer direction="right" v-model:open="openDrawer" :handle="false" inset>
             <template #content>
                 <div class="w-[40rem] p-3 lg:p-6 flex flex-col space-y-5 flex-nowrap overflow-y-auto">
+                    <div class="flex justify-end sticky top-0">
+                        <UButton @click="closeDrawer" color="error" trailing-icon="i-lucide-x"
+                            class="cursor-pointer mt-1" size="sm">
+                        </UButton>
+                    </div>
                     <h2 class="font-semibold text-lg">{{ selectedExperience.position }}</h2>
                     <div class="flex space-x-2 text-sm tracking-wide">
                         <h2 class="font-semibold">Company:</h2>
@@ -32,16 +38,16 @@ const selectExperienceHandler = (value) => {
                     </div>
                     <div class="flex flex-col">
                         <h2 class="font-normal text-sm">Frontend:</h2>
-                        <div class="flex flex-row space-x-2 mt-1">
+                        <div class="flex flex-row space-x-2 mt-1 flex-wrap gap-y-2">
                             <div v-for="(stack, stackIdx) in selectedExperience.frontend.split(',')" :key="stackIdx"
-                                class="bg-primary text-black font-semibold text-xs px-3 py-1 rounded-sm">
+                                class="bg-primary text-black font-semibold text-xs text-nowrap px-3 py-1 rounded-sm">
                                 {{ stack }}
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col">
                         <h2 class="font-normal text-sm">Backend:</h2>
-                        <div class="flex flex-row space-x-2 mt-1">
+                        <div class="flex flex-row space-x-2 mt-1 flex-wrap gap-y-2">
                             <div v-for="(stack, stackIdx) in selectedExperience.backend.split(',')" :key="stackIdx"
                                 class="bg-primary text-black font-semibold text-xs px-3 py-1 rounded-sm text-nowrap">
                                 {{ stack }}
@@ -53,7 +59,8 @@ const selectExperienceHandler = (value) => {
                             <li v-for="(role, roleIdx) in selectedExperience.roles" :key="roleIdx" class="my-2">
                                 {{ role.task }}
                                 <ul class="list-disc ml-9">
-                                    <li v-for="(task, taskIdx) in role.subtask" :key="taskIdx" class="my-1">{{ task }}</li>
+                                    <li v-for="(task, taskIdx) in role.subtask" :key="taskIdx" class="my-1">{{ task }}
+                                    </li>
                                 </ul>
                             </li>
                         </ol>
