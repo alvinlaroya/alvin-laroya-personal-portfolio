@@ -49,7 +49,7 @@ const testimonials = [
                     class="rounded-2xl py-4 px-7 shadow-md hover:shadow-lg transition-shadow relative justify-between flex flex-col h-54">
 
                     <!-- Testimonial Text -->
-                    <p class="text-gray-300 text-xs leading-relaxed mb-6">
+                    <p class="text-gray-400 text-xs leading-relaxed mb-6">
                         "{{ item.text }}"
                     </p>
 
@@ -63,7 +63,7 @@ const testimonials = [
                             <h4 class="font-semibold text-sm" style="color: white">
                                 {{ item.author }}
                             </h4>
-                            <p class="text-gray-300 text-xs">{{ item.position }}</p>
+                            <p class="text-gray-400 text-xs">{{ item.position }}</p>
                         </div>
                     </div>
                 </div>
