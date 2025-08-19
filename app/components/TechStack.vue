@@ -141,7 +141,7 @@ const aiStacks = [
                     <span class="text-sm text-gray-500">No Results</span>
                 </div>
             </div>
-            <div class="mt-3">
+            <div class="mt-5">
                 <h2 class="font-semibold text-sm">Backend Technologies:</h2>
                 <div v-if="filteredBackend.length > 0" class="flex flex-wrap mt-2 gap-1.5">
                     <div v-for="stack in filteredBackend"
@@ -156,7 +156,7 @@ const aiStacks = [
                     <span class="text-sm text-gray-500">No Results</span>
                 </div>
             </div>
-            <div class="mt-3">
+            <div class="mt-5">
                 <h2 class="font-semibold text-sm">AI/LLM Tools:</h2>
                 <div class="flex flex-wrap mt-2 gap-1.5">
                     <div v-for="stack in aiStacks"
