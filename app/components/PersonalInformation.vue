@@ -28,16 +28,19 @@ const informations = [
                 <NuxtImg src="/profile.webp" fit="cover" alt="profile-image" width="300" height="300"
                     class="w-[150px] rounded-full" />
             </div>
-            <div>
+            <div class="flex flex-col justify-center">
                 <h2 class="text-left lg:text-center text-xl lg:text-2xl mb-2 font-semibold">Alvin Laroya</h2>
-                <div v-for="(info, i) in informations" :key="i" class="flex space-x-3 items-center mb-1.5 text-gray-300">
+                <div v-for="(info, i) in informations" :key="i"
+                    class="flex space-x-3 items-center mb-0 lg:mb-1.5 text-gray-300">
                     <div class="flex">
                         <Icon :name="info.icon" size="1rem" />
                     </div>
-                    <a :href="info.href" class="text-sm" :class="{ 'underline': info?.href }">{{ info.text }}</a>
+                    <a :href="info.href" class="text-sm" :class="{ 'text-secondary hover:underline': info?.href }">{{
+                        info.text }}</a>
                 </div>
                 <!--  <SpotifyLastPlayed /> -->
                 <USeparator class="mt-3 hidden lg:block" />
+                <Connections class="hidden lg:block" />
             </div>
         </div>
     </aside>

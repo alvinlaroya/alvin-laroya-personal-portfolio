@@ -27,20 +27,32 @@ const frontendStacks = [
         name: "Shadcn UI",
         svg: "/svg/shadcn.svg"
     }, {
+        name: "Vuetify",
+        svg: "/svg/vuetify.svg"
+    }, {
         name: "Material UI",
         svg: "/svg/materialui.svg"
-    }, {
-        name: "Pinia/Vuex",
-        svg: "/svg/pinia.svg"
-    }, {
-        name: "Redux/Zustand",
-        svg: "/svg/redux.svg"
     }, {
         name: "Zod",
         svg: "/svg/zod.svg"
     }, {
         name: "Postman",
         svg: "/svg/postman.svg"
+    }
+]
+
+const stateManagementStacks = [
+    {
+        name: "Pinia",
+        svg: "/svg/pinia.svg"
+    }, {
+        name: "Vuex",
+        svg: "/svg/vue.svg"
+    }, {
+        name: "Redux",
+        svg: "/svg/redux.svg"
+    }, {
+        name: "Zustand"
     }
 ]
 
@@ -105,6 +117,16 @@ const backendStacks = [
     }
 ]
 
+const uiUxDesignStacks = [
+    {
+        name: "Adobe Photoshop",
+        svg: "/svg/photoshop.svg"
+    }, {
+        name: "Figma",
+        svg: "/svg/figma.svg"
+    }
+]
+
 const aiStacks = [
     {
         name: "OpenAI",
@@ -114,6 +136,9 @@ const aiStacks = [
     }, {
         name: "N8n AI Automation",
         svg: "/svg/n8n.svg"
+    }, {
+        name: "Claude AI",
+        svg: "/svg/claude.svg"
     }
 ]
 </script>
@@ -142,6 +167,18 @@ const aiStacks = [
                 </div>
             </div>
             <div class="mt-5">
+                <h2 class="font-semibold text-sm">State Management:</h2>
+                <div class="flex flex-wrap mt-2 gap-1.5">
+                    <div v-for="stack in stateManagementStacks"
+                        class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs  items-center">
+                        <div v-if="stack?.svg !== undefined" class="flex">
+                            <img :src="stack.svg" class="w-4 h-4" alt="">
+                        </div>
+                        <span class="text-gray-400">{{ stack.name }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5">
                 <h2 class="font-semibold text-sm">Backend Technologies:</h2>
                 <div v-if="filteredBackend.length > 0" class="flex flex-wrap mt-2 gap-1.5">
                     <div v-for="stack in filteredBackend"
@@ -154,6 +191,18 @@ const aiStacks = [
                 </div>
                 <div v-else>
                     <span class="text-sm text-gray-500">No Results</span>
+                </div>
+            </div>
+            <div class="mt-5">
+                <h2 class="font-semibold text-sm">UI/UX Design:</h2>
+                <div class="flex flex-wrap mt-2 gap-1.5">
+                    <div v-for="stack in uiUxDesignStacks"
+                        class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs  items-center">
+                        <div v-if="stack?.svg !== undefined" class="flex">
+                            <img :src="stack.svg" class="w-4 h-4" alt="">
+                        </div>
+                        <span class="text-gray-400">{{ stack.name }}</span>
+                    </div>
                 </div>
             </div>
             <div class="mt-5">

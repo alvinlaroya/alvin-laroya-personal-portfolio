@@ -16,6 +16,8 @@
                 <USeparator />
                 <Projects />
                 <USeparator />
+                <VueWorkshop />
+                <USeparator />
                 <Testimonials />
                 <!-- <ContactMe /> -->
             </main>

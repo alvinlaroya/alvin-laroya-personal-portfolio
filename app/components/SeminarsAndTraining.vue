@@ -5,7 +5,7 @@ const items = ref<TimelineItem[]>([
     {
         date: 'Mar 22, 2023',
         title: 'Web Development Workshop on Vue.js at DMMMSU',
-        description: 'I recently conducted a hands-on Vue.js Web Development Workshop at my former university, Don Mariano Marcos Memorial State University (DMMMSU). The session focused on introducing students to modern frontend development using Vue.js, covering essential concepts such as component-based architecture, reactive data binding, and building single-page applications. Participants were guided through practical coding exercises, best practices, and real-world development workflows. It was a great opportunity to give back to the community and inspire future developers in the field of web technologies.',
+        description: 'I recently conducted a hands-on Vue.js Web Development Workshop at my former university, Don Mariano Marcos Memorial State University (DMMMSU).',
         icon: 'i-lucide-rocket'
     },
     {

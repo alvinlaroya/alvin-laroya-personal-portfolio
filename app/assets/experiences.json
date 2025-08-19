@@ -14,7 +14,8 @@
                 "shadcn",
                 "node",
                 "postgresql",
-                "prisma"
+                "prisma",
+                "supabase"
             ],
             "roles": [
                 {
@@ -49,6 +50,7 @@
                 "vue",
                 "react",
                 "next",
+                "vuetify",
                 "materialui",
                 "node",
                 "express"
@@ -74,7 +76,11 @@
             "backend": "Laravel API",
             "company": "Elite Anywhere Corp.",
             "address": "#82585 Showcase Pkwy Indio, CA 92203",
-            "stacks": ["vue", "laravel"],
+            "stacks": [
+                "vue",
+                "vuetify",
+                "laravel"
+            ],
             "roles": [
                 {
                     "task": "Migrated the logistics web application from a Laravel Blade-based application to a Laravel Vue Single Page Application (SPA), enhancing user experience and performance.",
@@ -88,7 +94,14 @@
             "backend": "Firebase Firestore",
             "company": "TaraPhilippines",
             "address": "#2 Roman Ayson Rd,. Upper Bokawkan, Baguio City",
-            "stacks": ["vue", "nuxt", "react", "node", "firebase"],
+            "stacks": [
+                "vue",
+                "nuxt",
+                "vuetify",
+                "react",
+                "node",
+                "firebase"
+            ],
             "roles": [
                 {
                     "task": "Developed Skood (Admin Dashboard) Food Delivery App of Baguio City.",

@@ -8,6 +8,24 @@ const testimonials = [
     },
     {
         text: "Alvin is a reliable and talented developer. They’re great at solving problems, writing clean code, and working well with the team.",
+        author: "Lawrence Bonilla",
+        position: "Frontend Developer, Pilothouse Digital",
+        avatar: "/testimonials/lawrence.webp",
+    },
+    {
+        text: "Working with Alvin has been a great experience. He’s a reliable software developer who not only writes clean and efficient code but also collaborates well with the team to deliver quality solutions on time.",
+        author: "Ryan Bel Soriano",
+        position: "Frontend Developer, Pilothouse Digital",
+        avatar: "/testimonials/ryan.webp",
+    },
+    {
+        text: "Alvin is a reliable and talented developer. They’re great at solving problems, writing clean code, and working well with the team.",
+        author: "Lawrence Bonilla",
+        position: "Frontend Developer, Pilothouse Digital",
+        avatar: "/testimonials/lawrence.webp",
+    },
+    {
+        text: "Alvin is a reliable and talented developer. They’re great at solving problems, writing clean code, and working well with the team.",
         author: "Joshua Cucueco",
         position: "Frontend Developer, Pilothouse Digital",
         avatar: "/testimonials/joshua.webp",
@@ -17,46 +35,39 @@ const testimonials = [
 
 <template>
     <div>
-        <div class="container">
-            <h2 class="text-xl font-semibold mb-1">
-                Testimonials
-            </h2>
-            <p class="text-gray-600 mb-12">
-                What people say about working with me
-            </p>
+        <h2 class="text-xl font-semibold mb-1">
+            Testimonials
+        </h2>
+        <p class="text-gray-600 mb-7">
+            What people say about working with me
+        </p>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <div v-for="(testimonial, i) in testimonials" data-aos="fade-up" :data-aos-delay="i * 200"
-                    class="bg-[#03101d] rounded-2xl py-4 px-7 shadow-md hover:shadow-lg transition-shadow relative justify-between flex flex-col">
-                    <!-- Quote Icon -->
-                    <div
-                        class="absolute -top-4 -left-4 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M11 8c2.2 0 4 1.8 4 4v8h-8v-8h4c0-2.2-1.8-4-4-4v-4c2.2 0 4 1.8 4 4zm12-4v4c-2.2 0-4 1.8-4 4v8h-8v-8h4c0-2.2-1.8-4-4-4v-4c2.2 0 4 1.8 4 4h8z" />
-                        </svg>
-                    </div>
+        <div class="">
+            <UCarousel v-slot="{ item }" loop arrows dots class-names class="max-w-2xl mx-auto"
+                :autoplay="{ delay: 3000 }" :items="testimonials" :ui="{ item: 'base-1 lg:basis-1/2' }">
+                <div style="background-color: #03101d;"
+                    class="rounded-2xl py-4 px-7 shadow-md hover:shadow-lg transition-shadow relative justify-between flex flex-col h-54">
 
                     <!-- Testimonial Text -->
-                    <p class="text-gray-400 text-xs leading-relaxed mb-6">
-                        "{{ testimonial.text }}"
+                    <p class="text-gray-300 text-xs leading-relaxed mb-6">
+                        "{{ item.text }}"
                     </p>
 
                     <!-- Author Info with Avatar -->
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full overflow-hidden ring-2 ring-blue-100">
-                            <img :src="testimonial.avatar" :alt="testimonial.author" class="w-full h-full object-cover"
+                        <div class="w-12 h-12 rounded-full overflow-hidden">
+                            <img :src="item.avatar" :alt="item.author" class="w-full h-full object-cover"
                                 loading="lazy" />
                         </div>
                         <div>
-                            <h4 class="font-semibold text-sm text-white">
-                                {{ testimonial.author }}
+                            <h4 class="font-semibold text-sm" style="color: white">
+                                {{ item.author }}
                             </h4>
-                            <p class="text-gray-400 text-xs">{{ testimonial.position }}</p>
+                            <p class="text-gray-300 text-xs">{{ item.position }}</p>
                         </div>
                     </div>
                 </div>
-            </div>
+            </UCarousel>
         </div>
     </div>
 </template>
