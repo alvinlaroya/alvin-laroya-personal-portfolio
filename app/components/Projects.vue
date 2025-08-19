@@ -3,22 +3,14 @@ const projects = [
     {
         src: '/projects/brett-tech.webp',
         link: 'https://brett-tech-store.netlify.app/collections/frontpage',
-        title: 'Brett Tech Store'
+        title: 'Brett Tech Store',
+        description: 'Developed a custom Shopify store powered by Nuxt.js and the Shopify Storefront API, delivering a fast, headless e-commerce experience with optimized performance, seamless product browsing, and a fully tailored frontend design.'
     },
     {
         src: '/projects/journee.webp',
         link: 'https://journeecollection.com/collections/all',
-        title: 'Journee Collection Store'
-    },
-    {
-        src: '/projects/brett-tech.webp',
-        link: 'https://brett-tech-store.netlify.app/collections/frontpage',
-        title: 'Brett Tech Store'
-    },
-    {
-        src: '/projects/journee.webp',
-        link: 'https://journeecollection.com/collections/all',
-        title: 'Journee Collection Store'
+        title: 'Journee Collection Store',
+        description: 'Developed a custom Shopify store powered by Nuxt.js and the Shopify Storefront API, delivering a fast, headless e-commerce experience with optimized performance, seamless product browsing, and a fully tailored frontend design'
     }
 ]
 </script>
@@ -48,8 +40,7 @@ const projects = [
                         </h3>
                         <p
                             class="text-sm leading-relaxed mb-6 transform translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-600 delay-300">
-                            Discover breathtaking landscapes and embark on an unforgettable journey through nature's
-                            wonders.
+                            {{ project.description }}
                         </p>
 
                         <!-- Button that slides in -->

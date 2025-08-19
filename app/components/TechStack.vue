@@ -29,6 +29,8 @@ const backendStacks = [
     }, {
         name: "Knex.js"
     }, {
+        name: "Express.js"
+    }, {
         name: "PostgreSQL"
     }, {
         name: "MySQL"
@@ -36,6 +38,12 @@ const backendStacks = [
         name: "Firebase"
     }, {
         name: "Supabase"
+    }, {
+        name: "REST"
+    }, {
+        name: "GraphQL"
+    }, {
+        name: "Storefront API"
     }
 ]
 </script>

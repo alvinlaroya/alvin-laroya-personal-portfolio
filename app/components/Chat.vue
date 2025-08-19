@@ -127,7 +127,7 @@ const handleKeyPress = (event) => {
                         </svg>
                     </div>
                     <div class="flex-1">
-                        <h1 class="text-lg font-semibold">AI Assistant</h1>
+                        <h1 class="text-lg font-semibold">Alvin CV Agent</h1>
                         <p class="text-blue-200 text-xs">{{ isSending ? 'Typing...' : 'Online' }}</p>
                     </div>
                 </div>

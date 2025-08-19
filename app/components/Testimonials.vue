@@ -4,13 +4,13 @@ const testimonials = [
         text: "Working with Alvin has always been a great experience. He’s a reliable and collaborative developer who consistently brings creative solutions to the table. His strong problem-solving skills and willingness to help teammates make him a valuable asset to any project or team.",
         author: "Jonjie Viduya",
         position: "Sr. Fullstack Developer, Pen Brothers",
-        avatar: "/profile.webp",
+        avatar: "/testimonials/jonjie.webp",
     },
     {
-        text: "Great problem-solver and team player. Always goes above and beyond.",
-        author: "Lawrence Bonilla",
-        position: "Frontend Develope, Pilothouse Digital",
-        avatar: "/profile.webp",
+        text: "Alvin is a reliable and talented developer. They’re great at solving problems, writing clean code, and working well with the team.",
+        author: "Joshua Cucueco",
+        position: "Frontend Developer, Pilothouse Digital",
+        avatar: "/testimonials/joshua.webp",
     },
 ]; 
 </script>
@@ -18,10 +18,10 @@ const testimonials = [
 <template>
     <div>
         <div class="container">
-            <h2 data-aos="fade-up" class="text-xl font-semibold mb-1">
+            <h2 class="text-xl font-semibold mb-1">
                 Testimonials
             </h2>
-            <p data-aos="fade-up" data-aos-delay="100" class="text-gray-600 mb-12">
+            <p class="text-gray-600 mb-12">
                 What people say about working with me
             </p>
 
@@ -38,7 +38,7 @@ const testimonials = [
                     </div>
 
                     <!-- Testimonial Text -->
-                    <p class="text-neutral-700 text-sm leading-relaxed mb-6">
+                    <p class="text-neutral-700 text-xs leading-relaxed mb-6">
                         "{{ testimonial.text }}"
                     </p>
 
@@ -49,10 +49,10 @@ const testimonials = [
                                 loading="lazy" />
                         </div>
                         <div>
-                            <h4 class="font-semibold text-neutral-900">
+                            <h4 class="font-semibold text-sm text-neutral-900">
                                 {{ testimonial.author }}
                             </h4>
-                            <p class="text-neutral-600 text-sm">{{ testimonial.position }}</p>
+                            <p class="text-neutral-600 text-xs">{{ testimonial.position }}</p>
                         </div>
                     </div>
                 </div>
