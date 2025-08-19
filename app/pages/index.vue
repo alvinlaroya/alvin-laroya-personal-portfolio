@@ -6,9 +6,10 @@
             <PersonalInformation />
 
             <!-- Main Content Area -->
-            <main class="flex-1 min-h-screen p-4 flex flex-col space-y-9">
+            <main class="flex-1 min-h-screen pr-4 flex flex-col space-y-9">
                 <AboutMe />
                 <Experiences />
+                <TechStack />
                 <SeminarsAndTraining />
                 <Projects />
                 <USeparator />

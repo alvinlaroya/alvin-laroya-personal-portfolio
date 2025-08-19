@@ -6,6 +6,16 @@
             "backend": "Storefront, Shopify GraphQL, Knex.js, PostgreSQL, Drizzle ORM, Supabase",
             "company": "Pilothouse Digital",
             "address": "#1011 Government St, Victoria, BC V8W 1X6, Canada",
+            "stacks": [
+                "vue",
+                "nuxt",
+                "svelte",
+                "tailwind",
+                "shadcn",
+                "node",
+                "postgresql",
+                "prisma"
+            ],
             "roles": [
                 {
                     "task": "Engineered a Headless CMS E-commerce solution for Shopify stores, managing backend migrations and services.",
@@ -35,6 +45,14 @@
             "backend": "JS-force, Salesforce, Node, Express",
             "company": "ArchIntel Corp.",
             "address": "#8245 Boone Blvd # 650, Tysons, VA 22182, Estados Unidos",
+            "stacks": [
+                "vue",
+                "react",
+                "next",
+                "materialui",
+                "node",
+                "express"
+            ],
             "roles": [
                 {
                     "task": "Developed the frontend of the Chassis/System for a video interview platform to be used by seven users, including video editors.",
@@ -56,6 +74,7 @@
             "backend": "Laravel API",
             "company": "Elite Anywhere Corp.",
             "address": "#82585 Showcase Pkwy Indio, CA 92203",
+            "stacks": ["vue", "laravel"],
             "roles": [
                 {
                     "task": "Migrated the logistics web application from a Laravel Blade-based application to a Laravel Vue Single Page Application (SPA), enhancing user experience and performance.",
@@ -69,6 +88,7 @@
             "backend": "Firebase Firestore",
             "company": "TaraPhilippines",
             "address": "#2 Roman Ayson Rd,. Upper Bokawkan, Baguio City",
+            "stacks": ["vue", "react", "node", "firebase"],
             "roles": [
                 {
                     "task": "Developed Skood (Admin Dashboard) Food Delivery App of Baguio City.",

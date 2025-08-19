@@ -22,7 +22,7 @@ const informations = [
 </script>
 
 <template>
-    <aside class="flex lg:sticky top-16 lg:h-[calc(100vh-4rem)] w-full lg:w-72">
+    <aside class="flex lg:sticky top-16 lg:h-[calc(100vh-4rem)] w-full lg:w-76">
         <div class="p-4 w-full space-y-4 tracking-wide">
             <div class="flex justify-center items-center">
                 <NuxtImg src="/profile.webp" fit="cover" alt="profile-image" width="300" height="300"
@@ -37,7 +37,6 @@ const informations = [
                     <a :href="info.href" class="text-sm" :class="{ 'underline': info?.href }">{{ info.text }}</a>
                 </div>
                 <USeparator class="mt-3" />
-                <TechStack />
             </div>
         </div>
     </aside>

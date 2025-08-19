@@ -1,51 +1,83 @@
 <script setup>
 const frontendStacks = [
     {
-        name: "Vue.js"
+        name: "Vue.js",
+        svg: "/svg/vue.svg"
     }, {
-        name: "React.js"
+        name: "React.js",
+        svg: "/svg/react.svg"
     }, {
-        name: "Svelte"
+        name: "Svelte",
+        svg: "/svg/svelte.svg"
     }, {
-        name: "React Native Expo"
+        name: "React Native Expo",
+        svg: "/svg/react.svg"
     }, {
-        name: "Nuxt"
+        name: "Nuxt",
+        svg: "/svg/nuxt.svg"
     }, {
-        name: "Next.js"
+        name: "Next.js",
+        svg: "/svg/next.svg"
     }, {
-        name: "Pinia/Vuex"
+        name: "Tailwind CSS",
+        svg: "/svg/tailwind.svg"
     }, {
-        name: "Redux/Zustand"
+        name: "Shadcn UI",
+        svg: "/svg/shadcn.svg"
     }, {
-        name: "OpenAPI"
+        name: "Pinia/Vuex",
+        svg: "/svg/pinia.svg"
     }, {
-        name: "Postman"
+        name: "Redux/Zustand",
+        svg: "/svg/redux.svg"
+    }, {
+        name: "Zod",
+        svg: "/svg/zod.svg"
+    }, {
+        name: "OpenAPI",
+        svg: "/svg/openapi.svg"
+    }, {
+        name: "Postman",
+        svg: "/svg/postman.svg"
     }
 ]
 
 const backendStacks = [
     {
-        name: "Node.js"
+        name: "Node.js",
+        svg: "/svg/node.svg"
     }, {
-        name: "Prisma"
+        name: "Typescript",
+        svg: "/svg/typescript.svg"
     }, {
-        name: "Drizzle ORM"
+        name: "Prisma",
+        svg: "/svg/prisma.svg"
     }, {
-        name: "Knex.js"
+        name: "Drizzle ORM",
+        svg: "/svg/node.svg"
     }, {
-        name: "Express.js"
+        name: "Knex.js",
+        svg: "/svg/node.svg"
     }, {
-        name: "PostgreSQL"
+        name: "Express.js",
+        svg: "/svg/express.svg"
     }, {
-        name: "MySQL"
+        name: "PostgreSQL",
+        svg: "/svg/postgresql.svg"
     }, {
-        name: "Firebase"
+        name: "MySQL",
+        svg: "/svg/mysql.svg"
     }, {
-        name: "Supabase"
+        name: "Firebase",
+        svg: "/svg/firebase.svg"
+    }, {
+        name: "Supabase",
+        svg: "/svg/supabase.svg"
     }, {
         name: "REST"
     }, {
-        name: "GraphQL"
+        name: "GraphQL",
+        svg: "/svg/graphql.svg"
     }, {
         name: "Storefront API"
     }
@@ -63,40 +95,43 @@ const aiStacks = [
 </script>
 
 <template>
-    <div class="my-2">
-        <div>
-            <h2 class="font-semibold text-sm">Frontend Technologies:</h2>
-            <div class="flex flex-wrap mt-2 gap-1.5">
-                <div v-for="stack in frontendStacks"
-                    class="flex space-x-2 bg-[#0A253D] px-2 py-1 rounded-md text-xs  items-center">
-                    <!-- <div class="flex">
-                        <Icon name="lucide:code" size="1rem" />
-                    </div> -->
-                    <span>{{ stack.name }}</span>
+    <div class="">
+        <h2 class="text-xl font-semibold">Tech Stack:</h2>
+        <div class="p-3 border border-gray-500 rounded-md mt-3">
+            <div>
+                <h2 class="font-semibold text-sm">Frontend Technologies:</h2>
+                <div class="flex flex-wrap mt-2 gap-1.5">
+                    <div v-for="stack in frontendStacks"
+                        class="flex space-x-2 border px-2 py-1 rounded-md text-xs  items-center">
+                        <div v-if="stack?.svg !== undefined" class="flex">
+                            <img :src="stack.svg" class="w-4 h-4" alt="">
+                        </div>
+                        <span>{{ stack.name }}</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="mt-3">
-            <h2 class="font-semibold text-sm">Backend Technologies:</h2>
-            <div class="flex flex-wrap mt-2 gap-1.5">
-                <div v-for="stack in backendStacks"
-                    class="flex space-x-2 bg-[#0A253D] px-2 py-1 rounded-md text-xs  items-center">
-                    <!-- <div class="flex">
-                        <Icon name="lucide:code" size="1rem" />
-                    </div> -->
-                    <span>{{ stack.name }}</span>
+            <div class="mt-3">
+                <h2 class="font-semibold text-sm">Backend Technologies:</h2>
+                <div class="flex flex-wrap mt-2 gap-1.5">
+                    <div v-for="stack in backendStacks"
+                        class="flex space-x-2 border px-2 py-1 rounded-md text-xs  items-center">
+                        <div v-if="stack?.svg !== undefined" class="flex">
+                            <img :src="stack.svg" class="w-4 h-4" alt="">
+                        </div>
+                        <span>{{ stack.name }}</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="mt-3">
-            <h2 class="font-semibold text-sm">AI/LLM Tools:</h2>
-            <div class="flex flex-wrap mt-2 gap-1.5">
-                <div v-for="stack in aiStacks"
-                    class="flex space-x-2 bg-[#0A253D] px-2 py-1 rounded-md text-xs  items-center">
-                    <!-- <div class="flex">
+            <div class="mt-3">
+                <h2 class="font-semibold text-sm">AI/LLM Tools:</h2>
+                <div class="flex flex-wrap mt-2 gap-1.5">
+                    <div v-for="stack in aiStacks"
+                        class="flex space-x-2 bg-[#0A253D] px-2 py-1 rounded-md text-xs  items-center">
+                        <!-- <div class="flex">
                         <Icon name="lucide:code" size="1rem" />
                     </div> -->
-                    <span>{{ stack.name }}</span>
+                        <span>{{ stack.name }}</span>
+                    </div>
                 </div>
             </div>
         </div>
