@@ -17,8 +17,6 @@ function showToast() {
                 <div class="hidden md:block">
                     <div class="flex items-center space-x-4">
                         <a href="#"
-                            class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Home</a>
-                        <a href="#"
                             class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">About</a>
                         <a href="#"
                             class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Experience</a>

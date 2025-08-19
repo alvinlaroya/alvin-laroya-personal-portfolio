@@ -1,6 +1,6 @@
 <template>
-    <div class="mt-3">
-        <h2 class="text-sm text-gray-400 mb-4">Character Reference:</h2>
+    <div class="mt-2">
+        <h2 class="text-sm text-gray-200 mb-4">Character Reference:</h2>
         <UAvatarGroup>
             <UTooltip text="Jonjie Viduya">
                 <ULink to="https://www.facebook.com/jonjie.viduya" target="_blank" class="hover:ring-primary transition" raw>

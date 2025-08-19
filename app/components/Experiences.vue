@@ -20,7 +20,13 @@ function capitalize(str) {
             <h2 class="font-semibold text-sm tracking-wide">{{ exp.position }}</h2>
             <div class="flex space-x-2 text-gray-400 text-xs tracking-wide">
                 <h2 class="font-semibold">Company:</h2>
-                <span>{{ exp.company }} - {{ exp.address }}</span>
+                <div>
+                    <span class="text-gray-200">{{ exp.company }}</span>
+                    <span class="mx-2">•</span>
+                    <Icon name="lucide:map-pin" size="0.8rem" class="-mb-0.5 mr-2" />
+                    <span class="text-gray-200">{{
+                        exp.address }}</span>
+                </div>
             </div>
             <div class="flex justify-between">
                 <UAvatarGroup size="xs" class="mt-2">
@@ -42,13 +48,13 @@ function capitalize(str) {
                         </UButton>
                     </div>
                     <h2 class="font-semibold text-lg">{{ selectedExperience.position }}</h2>
-                    <div class="flex space-x-2 text-sm tracking-wide">
+                    <div class="flex space-x-2 text-sm tracking-wider">
                         <h2 class="font-semibold">Company:</h2>
                         <span class="text-gray-300"><span class="text-primary">{{ selectedExperience.company }}</span> -
                             {{ selectedExperience.address }}</span>
                     </div>
                     <div class="flex flex-col">
-                        <h2 class="font-normal text-sm">Technologies Stack:</h2>
+                        <h2 class="font-normal text-sm tracking-wider">Technologies Stack:</h2>
                         <div class="flex flex-row space-x-2 flex-wrap gap-y-2 mt-2">
                             <div v-for="(stack, stackIdx) in selectedExperience.stacks" :key="stackIdx"
                                 class="bg-transparent text-whte border border-gray-500 font-semibold text-xs text-nowrap flex space-x-2 px-2 py-1 rounded-md">
@@ -59,8 +65,9 @@ function capitalize(str) {
                             </div>
                         </div>
                     </div>
-                    <div class="px-4 text-sm font-thin tracking-wide">
-                        <ol class="list-decimal">
+                    <div class="text-sm font-thin tracking-wider">
+                        <h2 class="font-normal text-sm tracking-wider">Task/Role:</h2>
+                        <ol class="list-decimal pl-4">
                             <li v-for="(role, roleIdx) in selectedExperience.roles" :key="roleIdx" class="my-2">
                                 {{ role.task }}
                                 <ul class="list-disc ml-9">

@@ -39,7 +39,16 @@ const frontendStacks = [
         name: "Postman",
         svg: "/svg/postman.svg"
     }
-]
+];
+const filteredFrontend = computed(() => {
+    if (!search.value) {
+        return frontendStacks; // Return all items when search is empty
+    }
+
+    return frontendStacks.filter(stack =>
+        stack.name.toLowerCase().includes(search.value.toLowerCase())
+    );
+});
 
 const stateManagementStacks = [
     {
@@ -55,23 +64,12 @@ const stateManagementStacks = [
         name: "Zustand"
     }
 ]
-
-const filteredFrontend = computed(() => {
+const filteredStateManagement = computed(() => {
     if (!search.value) {
-        return frontendStacks; // Return all items when search is empty
+        return stateManagementStacks; // Return all items when search is empty
     }
 
-    return frontendStacks.filter(stack =>
-        stack.name.toLowerCase().includes(search.value.toLowerCase())
-    );
-});
-
-const filteredBackend = computed(() => {
-    if (!search.value) {
-        return backendStacks; // Return all items when search is empty
-    }
-
-    return backendStacks.filter(stack =>
+    return stateManagementStacks.filter(stack =>
         stack.name.toLowerCase().includes(search.value.toLowerCase())
     );
 });
@@ -115,7 +113,16 @@ const backendStacks = [
     }, {
         name: "Storefront API"
     }
-]
+];
+const filteredBackend = computed(() => {
+    if (!search.value) {
+        return backendStacks; // Return all items when search is empty
+    }
+
+    return backendStacks.filter(stack =>
+        stack.name.toLowerCase().includes(search.value.toLowerCase())
+    );
+});
 
 const uiUxDesignStacks = [
     {
@@ -126,6 +133,15 @@ const uiUxDesignStacks = [
         svg: "/svg/figma.svg"
     }
 ]
+const filteredDesign = computed(() => {
+    if (!search.value) {
+        return uiUxDesignStacks; // Return all items when search is empty
+    }
+
+    return uiUxDesignStacks.filter(stack =>
+        stack.name.toLowerCase().includes(search.value.toLowerCase())
+    );
+});
 
 const aiStacks = [
     {
@@ -159,7 +175,7 @@ const aiStacks = [
                         <div v-if="stack?.svg !== undefined" class="flex">
                             <img :src="stack.svg" class="w-4 h-4" alt="">
                         </div>
-                        <span class="text-gray-400">{{ stack.name }}</span>
+                        <span class="text-gray-300">{{ stack.name }}</span>
                     </div>
                 </div>
                 <div v-else>
@@ -168,14 +184,17 @@ const aiStacks = [
             </div>
             <div class="mt-5">
                 <h2 class="font-semibold text-sm">State Management:</h2>
-                <div class="flex flex-wrap mt-2 gap-1.5">
-                    <div v-for="stack in stateManagementStacks"
+                <div v-if="filteredStateManagement.length > 0" class="flex flex-wrap mt-2 gap-1.5">
+                    <div v-for="stack in filteredStateManagement"
                         class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs  items-center">
                         <div v-if="stack?.svg !== undefined" class="flex">
                             <img :src="stack.svg" class="w-4 h-4" alt="">
                         </div>
-                        <span class="text-gray-400">{{ stack.name }}</span>
+                        <span class="text-gray-300">{{ stack.name }}</span>
                     </div>
+                </div>
+                <div v-else>
+                    <span class="text-sm text-gray-500">No Results</span>
                 </div>
             </div>
             <div class="mt-5">
@@ -186,7 +205,7 @@ const aiStacks = [
                         <div v-if="stack?.svg !== undefined" class="flex">
                             <img :src="stack.svg" class="w-4 h-4" alt="">
                         </div>
-                        <span class="text-gray-400">{{ stack.name }}</span>
+                        <span class="text-gray-300">{{ stack.name }}</span>
                     </div>
                 </div>
                 <div v-else>
@@ -195,14 +214,17 @@ const aiStacks = [
             </div>
             <div class="mt-5">
                 <h2 class="font-semibold text-sm">UI/UX Design:</h2>
-                <div class="flex flex-wrap mt-2 gap-1.5">
-                    <div v-for="stack in uiUxDesignStacks"
+                <div v-if="filteredDesign.length > 0" class="flex flex-wrap mt-2 gap-1.5">
+                    <div v-for="stack in filteredDesign"
                         class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs  items-center">
                         <div v-if="stack?.svg !== undefined" class="flex">
                             <img :src="stack.svg" class="w-4 h-4" alt="">
                         </div>
-                        <span class="text-gray-400">{{ stack.name }}</span>
+                        <span class="text-gray-300">{{ stack.name }}</span>
                     </div>
+                </div>
+                <div v-else>
+                    <span class="text-sm text-gray-500">No Results</span>
                 </div>
             </div>
             <div class="mt-5">
@@ -213,7 +235,7 @@ const aiStacks = [
                         <div v-if="stack?.svg !== undefined" class="flex">
                             <img :src="stack.svg" class="w-4 h-4" alt="">
                         </div>
-                        <span class="text-gray-400">{{ stack.name }}</span>
+                        <span class="text-gray-300">{{ stack.name }}</span>
                     </div>
                 </div>
             </div>
