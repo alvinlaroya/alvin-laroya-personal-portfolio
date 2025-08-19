@@ -38,6 +38,6 @@ const items = ref<TimelineItem[]>([
 <template>
     <div>
         <h2 class="text-xl font-semibold">Seminars/Training Attended</h2>
-        <UTimeline :default-value="0" :items="items" class="w-164 text-sm mt-3" />
+        <UTimeline :default-value="0" :items="items" class="w-full lg:w-164 text-sm mt-3" />
     </div>
 </template>
