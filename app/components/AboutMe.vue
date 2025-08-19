@@ -7,7 +7,7 @@ const yearsOfExperience = computed(() => {
 </script>
 
 <template>
-    <div class="border border-gray-600 rounded-md p-4">
+    <div id="about" class="border border-gray-600 rounded-md p-4">
         <h2 class="text-xl font-semibold">About Me</h2>
         <p class="text-sm mt-3 text-gray-300 tracking-wide">
             Results-driven Frontend Developer with {{ yearsOfExperience }}+ years of experience building modern,
