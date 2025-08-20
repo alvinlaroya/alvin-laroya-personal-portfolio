@@ -28,8 +28,8 @@ const informations = [
 <template>
     <aside class="flex lg:sticky top-16 lg:h-[calc(100vh-4rem)] w-full lg:w-76">
         <div class="flex flex-row lg:flex-col space-x-4 p-4 w-full space-y-4 tracking-wide">
-            <div class="flex justify-center items-center">
-                <NuxtImg src="/profile.webp" fit="cover" alt="profile-image" width="300" height="300"
+            <div class="flex justify-center items-center object-bottom">
+                <NuxtImg src="/profile1.webp" fit="cover" alt="profile-image" width="300" height="300"
                     class="w-[140px] lg:w-[200px] rounded-full" />
             </div>
             <div class="flex flex-col justify-center">
