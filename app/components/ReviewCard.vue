@@ -19,7 +19,7 @@ const toast = useToast();
 const deleteReview = async () => {
     isDeleting.value = true;
     try {
-        await fetch(`/api/reviews/${id}`, {
+        await $fetch(`/api/reviews/${id}`, {
             method: 'DELETE'
         })
 
