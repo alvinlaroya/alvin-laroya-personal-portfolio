@@ -5,7 +5,10 @@ export default defineNuxtConfig({
   modules: ['@nuxt/ui', '@nuxt/image', '@nuxtjs/supabase'],
   css: ['~/assets/css/main.css'],
   nitro: {
-    preset: 'netlify'
+    preset: 'netlify',
+    experimental: {
+      wasm: true
+    }
   },
   runtimeConfig: {
     public: {
