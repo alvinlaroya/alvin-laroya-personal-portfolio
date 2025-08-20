@@ -15,7 +15,7 @@ const testimonials = [
     {
         text: "Working with Alvin has been a great experience. He’s a reliable software developer who not only writes clean and efficient code but also collaborates well with the team to deliver quality solutions on time.",
         author: "Ryan Bel Soriano",
-        position: "Frontend Developer, Pilothouse Digital",
+        position: "Project Manager, DSWD Region 1",
         avatar: "/testimonials/ryan.webp",
     },
     {
@@ -27,7 +27,7 @@ const testimonials = [
     {
         text: "Alvin is a reliable and talented developer. They’re great at solving problems, writing clean code, and working well with the team.",
         author: "Joshua Cucueco",
-        position: "Frontend Developer, Pilothouse Digital",
+        position: "Programmer I, DSWD Region 1",
         avatar: "/testimonials/joshua.webp",
     },
 ]; 
