@@ -16,6 +16,9 @@ function scrollToSection(section, offset = 0) {
                 <!-- Navigation Links -->
                 <div class="hidden md:block">
                     <div class="flex items-center space-x-4">
+                        <NuxtLink to="/"
+                            class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Home
+                        </NuxtLink>
                         <a href="#" @click="scrollToSection('about', -80)"
                             class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">About</a>
                         <a href="#" @click="scrollToSection('experience', -80)"
