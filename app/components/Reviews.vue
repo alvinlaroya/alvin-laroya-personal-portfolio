@@ -19,7 +19,7 @@ const count = computed(() => data.value.reviews.count);
 
         <div class="grid grid-cols-1">
             <blockquote v-for="review in reviews" :key="review.id"
-                class="border-l-4 border-gray-500 italic my-8 pl-4 md:pl-8 py-4 mx-3">
+                class="border-l-2 border-gray-500 italic my-6 pl-4 md:pl-8 py-4 mx-3">
                 <p class="text-[16px] font-normal text-white">
                     {{ review?.message || '' }}
                 </p>

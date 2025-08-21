@@ -52,7 +52,7 @@ const projects = [
 </script>
 
 <template>
-    <div id="portfolio">
+    <div id="portfolio" >
         <h2 class="text-xl font-semibold">Projects</h2>
         <UCarousel v-slot="{ item: project }" arrows dots class-names :items="projects"
             :ui="{ item: 'base-1 lg:basis-1/2' }">

@@ -7,19 +7,13 @@ const testimonials = [
         avatar: "/testimonials/jonjie.webp",
     },
     {
-        text: "Alvin is a reliable and talented developer. They’re great at solving problems, writing clean code, and working well with the team.",
-        author: "Lawrence Bonilla",
-        position: "Frontend Developer, Pilothouse Digital",
-        avatar: "/testimonials/lawrence.webp",
-    },
-    {
         text: "Working with Alvin has been a great experience. He’s a reliable software developer who not only writes clean and efficient code but also collaborates well with the team to deliver quality solutions on time.",
         author: "Ryan Bel Soriano",
         position: "Project Manager, DSWD Region 1",
         avatar: "/testimonials/ryan.webp",
     },
     {
-        text: "Alvin is a reliable and talented developer. They’re great at solving problems, writing clean code, and working well with the team.",
+        text: "Alvin is a reliable and skilled software developer. He consistently delivered quality work and was always willing to collaborate and share his knowledge with the team.",
         author: "Lawrence Bonilla",
         position: "Frontend Developer, Pilothouse Digital",
         avatar: "/testimonials/lawrence.webp",
@@ -28,7 +22,7 @@ const testimonials = [
         text: "Alvin is a reliable and talented developer. They’re great at solving problems, writing clean code, and working well with the team.",
         author: "Allan Rosero",
         position: "Programmer I, DSWD Region 1",
-        avatar: "/testimonials/joshua.webp",
+        avatar: "/testimonials/allan.webp",
     },
 ]; 
 </script>

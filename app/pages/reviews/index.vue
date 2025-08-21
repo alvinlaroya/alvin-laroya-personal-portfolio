@@ -37,7 +37,21 @@ const developmentModal = ref(true);
 <template>
     <main class="flex-1 min-h-screen p-4 lg:pr-4 flex flex-col space-y-9">
         <div class="p-4">
-            <div class="bg-[#021526] md:bg-[#03101d] p-2 sticky top-14 z-50">
+            <UBreadcrumb :items="[
+                {
+                    label: 'Home',
+                    to: '/'
+                },
+                {
+                    label: 'Reviews',
+                    to: '/reviews'
+                }
+            ]">
+                <template #separator>
+                    <span class="mx-2 text-muted">/</span>
+                </template>
+            </UBreadcrumb>
+            <div class="bg-[#021526] md:bg-[#03101d] p-2 sticky top-16 z-20 mt-4">
                 <div class="flex flex-col md:flex-row justify-between items-end md:items-center">
                     <UButton @click="openReviewModal" icon="i-lucide-plus" size="sm" color="secondary" variant="solid"
                         class="cursor-pointer w-full md:w-auto text-xs">

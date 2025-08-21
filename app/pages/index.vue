@@ -14,7 +14,7 @@ useSeoMeta({
         <TechStack />
         <USeparator />
         <Projects />
-        <USeparator />
+        <USeparator class="mt-5" />
         <SeminarsAndTraining />
         <USeparator />
         <VueWorkshop />

@@ -104,7 +104,8 @@ const incrementLikeHandler = async () => {
             <div class="flex items-center gap-4">
                 <div class="flex justify-between w-full items-center">
                     <UButton @click="incrementLikeHandler" :loading="isLiking" :disabled="isLiking"
-                        icon="i-lucide-arrow-big-up" size="sm" :color="likes > 0 ? 'primary' : 'neutral'" variant="ghost">{{ likes }}
+                        icon="i-lucide-arrow-big-up" size="sm" :color="likes > 0 ? 'primary' : 'neutral'"
+                        variant="ghost" class="cursor-pointer">{{ likes }}
                     </UButton>
                     <div class="flex items-center space-x-4">
                         <h4 class="font-normal text-xs text-gray-400">

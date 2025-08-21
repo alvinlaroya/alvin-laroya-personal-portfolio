@@ -10,7 +10,7 @@ const yearsOfExperience = computed(() => {
     <div id="about" class="border border-gray-600 rounded-md p-4">
         <h2 class="text-xl font-semibold">About Me</h2>
         <p class="text-sm mt-3 text-gray-300 tracking-wide">
-            Results-driven Frontend Developer with {{ yearsOfExperience }}+ years of experience building modern,
+            Results-driven Software Developer with {{ yearsOfExperience }}+ years of experience building modern,
             high-performance
             e-commerce platforms. Skilled in Vue/Nuxt, Svelte/SvelteKit, React/Next, and Tailwind CSS. Proven
             track record in developing responsive, user-centric interfaces and integrating complex systems such
