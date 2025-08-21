@@ -1,6 +1,30 @@
+<script setup>
+const { data, status, refresh } = await useFetch('/api/reviews?from=0&to=2')
+const reviews = computed(() => data.value.reviews.data);
+const count = computed(() => data.value.reviews.count);
+</script>
+
+
 <template>
-    <div class="my-4">
-        <h2>REVIEWS SECTION</h2>
-        <NuxtLink to="/reviews" class="text-secondary">View All</NuxtLink>
+    <div>
+        <h2 class="text-xl font-semibold mb-1">
+            Portfolio Reviews
+        </h2>
+        <div class="flex justify-between">
+            <p class="text-gray-600 mb-7">
+                What people say about my portfolio
+            </p>
+            <NuxtLink to="/reviews" class="text-secondary text-sm hover:underline">View All</NuxtLink>
+        </div>
+
+        <div class="grid grid-cols-1">
+            <blockquote v-for="review in reviews" :key="review.id"
+                class="border-l-4 border-gray-500 italic my-8 pl-4 md:pl-8 py-4 mx-3">
+                <p class="text-[16px] font-normal text-white">
+                    {{ review?.message || '' }}
+                </p>
+                <cite class="block text-right mt-4 text-gray-600">- {{ review?.reviewed_by || '' }}</cite>
+            </blockquote>
+        </div>
     </div>
 </template>

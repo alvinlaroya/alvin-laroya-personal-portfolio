@@ -7,7 +7,7 @@ const openReviewModal = () => openModal.value = !openModal.value;
 provide('open', openModal)
 
 const from = ref(0);
-const to = ref(7);
+const to = ref(6);
 const { data, status, refresh } = await useFetch('/api/reviews', {
     query: computed(() => ({
         from: from.value,
@@ -37,12 +37,14 @@ const deleteReviewHandler = () => refresh();
                 <UButton @click="openReviewModal" icon="i-lucide-plus" size="md" color="secondary" variant="solid">
                     Create a review</UButton>
             </div>
-            <div class="flex flex-col space-y-4 py-4">
+            <div class="flex flex-col space-y-3 py-4">
                 <ReviewCard v-for="review in reviews" :key="review.id" :id="review.id" :reviewed_by="review.reviewed_by"
-                    :message="review.message" @delete="deleteReviewHandler" />
+                    :likes="review.likes" :message="review.message" @delete="deleteReviewHandler"
+                    @like="() => refresh()" />
                 <div class="flex justify-center">
-                    <UButton @click="loadMoreHandle" :loading="status === 'pending'" :disabled="status === 'pending'"
-                        size="lg" color="primary" variant="solid" class="w-64 flex justify-center cursor-pointer">Load
+                    <UButton v-show="count > to" @click="loadMoreHandle" :loading="status === 'pending'"
+                        :disabled="status === 'pending'" size="lg" color="primary" variant="solid"
+                        class="w-64 flex justify-center cursor-pointer">Load
                         More
                     </UButton>
                 </div>
