@@ -1,5 +1,7 @@
 <script setup>
+const activeLink = ref('home');
 function scrollToSection(section, offset = 0) {
+    activeLink.value = section;
     const element = document.getElementById(section);
     const y = element.getBoundingClientRect().top + window.scrollY + offset;
     window.scrollTo({
@@ -16,15 +18,19 @@ function scrollToSection(section, offset = 0) {
                 <!-- Navigation Links -->
                 <div class="hidden md:block">
                     <div class="flex items-center space-x-4">
-                        <NuxtLink to="/"
-                            class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Home
+                        <NuxtLink to="/" :class="{ 'text-primary border-b': activeLink === 'home' }"
+                            @click="scrollToSection('home', -80)"
+                            class="hover:text-primary px-3 py-2 text-sm font-normal tracking-wide">Home
                         </NuxtLink>
-                        <a href="#" @click="scrollToSection('about', -80)"
-                            class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">About</a>
-                        <a href="#" @click="scrollToSection('experience', -80)"
-                            class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Experience</a>
-                        <a href="#" @click="scrollToSection('portfolio', -80)"
-                            class="hover:text-primary px-3 py-2 rounded-md text-sm font-normal tracking-wide">Portfolio</a>
+                        <a :class="{ 'text-primary border-b': activeLink === 'about' }" href="#"
+                            @click="scrollToSection('about', -80)"
+                            class="hover:text-primary px-3 py-2 text-sm font-normal tracking-wide">About</a>
+                        <a :class="{ 'text-primary border-b': activeLink === 'experience' }" href="#"
+                            @click="scrollToSection('experience', -80)"
+                            class="hover:text-primary px-3 py-2 text-sm font-normal tracking-wide">Experience</a>
+                        <a :class="{ 'text-primary border-b': activeLink === 'portfolio' }" href="#"
+                            @click="scrollToSection('portfolio', -80)"
+                            class="hover:text-primary px-3 py-2 text-sm font-normal tracking-wide">Portfolio</a>
                     </div>
                 </div>
 
