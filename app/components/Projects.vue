@@ -5,28 +5,32 @@ const projects = [
         link: 'https://github.com/alvinlaroya/dal2.0',
         title: 'Digital Assets Library',
         description: 'Developed a custom Shopify store powered by Nuxt.js and the Shopify Storefront API, delivering a fast, headless e-commerce experience with optimized performance, seamless product browsing, and a fully tailored frontend design.',
-        stacks: ['vue', 'vuetify']
+        stacks: ['vue', 'vuetify'],
+        isInternal: true
     },
     {
         src: '/projects/archintel-chasis.webp',
         link: 'https://github.com/alvinlaroya/vue-vuex-vuetify-router/tree/master',
         title: 'Archintel Corp. Chasis',
         description: 'Developed a custom Shopify store powered by Nuxt.js and the Shopify Storefront API, delivering a fast, headless e-commerce experience with optimized performance, seamless product browsing, and a fully tailored frontend design.',
-        stacks: ['vue', 'vuetify']
+        stacks: ['vue', 'vuetify'],
+        isInternal: true
     },
     {
         src: '/projects/journee.webp',
         link: 'https://journeecollection.com/collections/all',
         title: 'Journee Collection Store',
         description: 'Developed a custom Shopify store powered by Nuxt.js and the Shopify Storefront API, delivering a fast, headless e-commerce experience with optimized performance, seamless product browsing, and a fully tailored frontend design',
-        stacks: ['vue', 'nuxt', 'tailwind']
+        stacks: ['vue', 'nuxt', 'tailwind'],
+        isInternal: false
     },
     {
         src: '/projects/brett-tech.webp',
         link: 'https://brett-tech-store.netlify.app/collections/frontpage',
         title: 'Brett Tech Store',
         description: 'Developed a custom Shopify store powered by Nuxt.js and the Shopify Storefront API, delivering a fast, headless e-commerce experience with optimized performance, seamless product browsing, and a fully tailored frontend design.',
-        stacks: ['vue', 'nuxt', 'tailwind']
+        stacks: ['vue', 'nuxt', 'tailwind'],
+        isInternal: false
     }
 ]
 </script>
@@ -62,7 +66,8 @@ const projects = [
                         <!-- Button that slides in -->
                         <div
                             class="transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-400">
-                            <a :href="project.link" target="_blank"
+                            <a :href="project.isInternal ? '/' : project.link"
+                                :target="project.isInternal ? '' : '_blank'"
                                 class="px-6 py-3 bg-primary text-black rounded-lg text-sm font-medium hover:bg-black hover:text-white duration-200 shadow-lg">
                                 Explore Now
                             </a>
@@ -70,7 +75,7 @@ const projects = [
                     </div>
                 </div>
                 <div class="flex justify-between items-center py-1 mt-1 px-1">
-                    <span class="text-gray-400">{{ project.title }}</span>
+                    <UBadge v-show="project.isInternal" class="font-normal" color="neutral" variant="outline">Internal</UBadge>
                     <div class="flex space-x-1.5">
                         <UTooltip v-for="stack in project.stacks" :text="stack">
                             <img :src="`/svg/${stack}.svg`" class="h-4 w-4" :alt="stack" />
