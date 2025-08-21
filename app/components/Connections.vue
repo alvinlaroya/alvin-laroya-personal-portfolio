@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-2">
+    <div class="mt-3">
         <h2 class="text-sm text-gray-200 mb-4">Character Reference:</h2>
         <UAvatarGroup>
             <UTooltip text="Jonjie Viduya">

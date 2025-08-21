@@ -45,10 +45,10 @@ const informations = [
                 <!--  <SpotifyLastPlayed /> -->
                 <USeparator class="mt-3 hidden lg:block" />
                 <div class="hidden lg:block">
-                    <div class="mt-2">
+                    <div class="mt-3">
                         <h2 class="text-sm text-gray-200">Pronounce: <span class="text-gray-400">he/his</span></h2>
                     </div>
-                    <div class="mt-2">
+                    <div class="mt-3">
                         <h2 class="text-sm text-gray-200">Hobbies:</h2>
                         <span class="text-gray-400 text-xs">Coding • Playing Guitar • Singing • FPS Gaming • Coffee • Nature Travel</span>
                     </div>
