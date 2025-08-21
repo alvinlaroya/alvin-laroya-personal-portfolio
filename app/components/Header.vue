@@ -1,4 +1,5 @@
 <script setup>
+const route = useRoute();
 const activeLink = ref('home');
 function scrollToSection(section, offset = 0) {
     activeLink.value = section;
@@ -18,7 +19,7 @@ function scrollToSection(section, offset = 0) {
                 <!-- Navigation Links -->
                 <div class="hidden md:block">
                     <div class="flex items-center space-x-4">
-                        <NuxtLink to="/" :class="{ 'text-primary border-b': activeLink === 'home' }"
+                        <NuxtLink to="/" :class="{ 'text-primary border-b': activeLink === 'home' && route.path === '/' }"
                             @click="scrollToSection('home', -80)"
                             class="hover:text-primary px-3 py-2 text-sm font-normal tracking-wide">Home
                         </NuxtLink>

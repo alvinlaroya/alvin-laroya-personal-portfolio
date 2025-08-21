@@ -42,9 +42,9 @@ const developmentModal = ref(true);
                     <UButton @click="openReviewModal" icon="i-lucide-plus" size="sm" color="secondary" variant="solid"
                         class="cursor-pointer w-full md:w-auto text-xs">
                         Write a review</UButton>
-                    <h2 class="text-xs mt-1 md:mt-0 order-1 md:order-0">Reviews <span class="text-secondary">({{ count
-                            }}
-                            total)</span></h2>
+                    <h2 class="text-xs mt-1 md:mt-0 order-1 md:order-0">Reviews
+                        <span class="text-secondary"> {{ count }} total</span>
+                    </h2>
                     <!-- <USelect v-model="selectedFilters" color="ghost" highlight :items="filters"
                         class="w-full mt-2 md:mt-0 md:w-48 order-0 md:order-1 text-xs" /> -->
                 </div>
