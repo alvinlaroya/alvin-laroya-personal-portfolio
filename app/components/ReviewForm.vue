@@ -24,12 +24,14 @@ const handleSubmit = async () => {
     await form.value.submit()
 }
 
+const supabase = useSupabaseClient();
 const emit = defineEmits(['submit'])
 async function onSubmit(event: FormSubmitEvent<Schema>) {
     event.preventDefault();
     isSubmitting.value = true;
 
     try {
+        /*  TEMPORARY UNUSED DUE TO NETLIFY NITRO SERVER ISSUE
         const response = await fetch('/api/reviews', {
             method: 'POST',
             body: JSON.stringify({
@@ -39,8 +41,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
             headers: {
                 'Content-Type': 'application/json'  // Fixed: proper header format
             }
-        });
-
+        }); 
         if (response.ok) {
             toast.add({
                 title: 'Success',
@@ -59,11 +60,40 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
             console.error('Submit Review Error:', errorData);
             throw new Error(`Failed to submit review: ${response.status}`);
         }
+        */
+
+        const { error } = await supabase
+            .from('reviews')
+            .insert({
+                'reviewed_by': state.name,
+                'message': state.message
+            })
+            .select();
+
+        if (error) {
+            return toast.add({
+                title: 'Error',
+                description: error,
+                color: 'error'
+            });
+        }
+
+        toast.add({
+            title: 'Success',
+            description: 'Your review has been submitted successfully!',
+            color: 'primary'
+        });
+        emit('submit')
+
+        // Reset form after successful submission
+        state.name = undefined;
+        state.message = undefined;
+
     } catch (error) {
         console.error("Error submitting review:", error);
         toast.add({
             title: 'Error',
-            description: 'Failed to send message. Please try again.',
+            description: 'Failed to submit your review. Please try again.',
             color: 'error'
         });
     } finally {
