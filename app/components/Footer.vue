@@ -100,9 +100,12 @@
                 <p class="text-gray-400 text-sm">
                     © 2025 Alvin Laroya. All rights reserved.
                 </p>
-                <p class="text-gray-400 text-sm">
-                    Designed & Built with Nuxt
-                </p>
+                <div class="text-gray-400 text-sm flex space-x-2">
+                    <span>Designed & Built with</span>
+                    <img src="/svg/nuxt.svg" class="w-5 h-5" alt="">
+                    <img src="/svg/tailwind.svg" class="w-5 h-5" alt="">
+                    <img src="/svg/supabase.svg" class="w-5 h-5" alt="">
+                </div>
             </div>
         </div>
     </div>
