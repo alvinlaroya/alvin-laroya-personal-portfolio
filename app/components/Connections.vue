@@ -27,6 +27,11 @@
                     <UAvatar src="/testimonials/joshua.webp" alt="Neil Richter" />
                 </ULink>
             </UTooltip>
+            <UTooltip text="Allan Rosero">
+                <ULink to="https://www.facebook.com/allanpaul.rosero" target="_blank" class="hover:ring-primary transition" raw>
+                    <UAvatar src="/testimonials/allan.webp" alt="Neil Richter" />
+                </ULink>
+            </UTooltip>
         </UAvatarGroup>
     </div>
 </template>

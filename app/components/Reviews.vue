@@ -23,8 +23,8 @@ const count = computed(() => data.value.reviews.count);
                 <p class="text-[16px] font-normal text-white">
                     {{ review?.message || '' }}
                 </p>
-                <div class="flex justify-between">
-                    <div v-if="review.likes > 0" class="flex space-x-2 text-gray-400 text-xs items-center">
+                <div class="flex justify-between" :class="{ 'justify-end': review.likes <= 0 }">
+                    <div v-show="review.likes > 0" class="flex space-x-2 text-gray-400 text-xs items-center">
                         <Icon name="lucide:arrow-big-up" size="1.2rem" />
                         <span>{{ review.likes }} upvotes</span>
                     </div>

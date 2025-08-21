@@ -100,6 +100,11 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         isSubmitting.value = false;
     }
 }
+const cancelHandler = () => {
+    open.value = false;
+    state.name = undefined;
+    state.message = undefined;
+}
 </script>
 
 <template>
@@ -116,10 +121,23 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
                             class="w-full" :disabled="isSubmitting" />
                     </UFormField>
                 </UForm>
+                <blockquote v-if="state?.name?.length > 0 && state?.message?.length > 0"
+                    class="border-l-4 border-gray-500 italic mt-5 pl-4 md:pl-8 py-4 mx-3">
+                    <p class="text-[16px] font-normal text-white">
+                        {{ state.message }}
+                    </p>
+                    <div class="flex justify-between">
+                        <div class="flex space-x-2 text-gray-400 text-xs items-center">
+                            <Icon name="lucide:arrow-big-up" size="1.2rem" />
+                            <span>2 upvotes</span>
+                        </div>
+                        <cite class="block text-right mt-4 text-gray-600">- {{ state.name }}</cite>
+                    </div>
+                </blockquote>
             </div>
         </template>
         <template #footer>
-            <UButton label="Cancel" color="neutral" variant="outline" @click="open = false" />
+            <UButton label="Cancel" color="neutral" variant="outline" @click="cancelHandler" />
             <UButton @click="handleSubmit" class="flex items-center justify-center cursor-pointer" size="sm"
                 :loading="isSubmitting" :disabled="isSubmitting">
                 {{ isSubmitting ? 'Sending...' : 'Submit Review' }}
