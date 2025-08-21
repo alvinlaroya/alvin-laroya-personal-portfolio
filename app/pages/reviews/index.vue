@@ -30,6 +30,8 @@ const loadMoreHandle = () => {
 }
 
 const deleteReviewHandler = () => refresh();
+
+const developmentModal = ref(true);
 </script>
 
 <template>
@@ -62,5 +64,14 @@ const deleteReviewHandler = () => refresh();
             </div>
         </div>
         <ReviewForm @submit="submitReviewHandler" />
+        <UModal :open="developmentModal">
+            <template #content>
+                <div class="p-4">
+                    <h2 class="mb-1">Notice</h2>
+                    <p class="mb-3 text-sm text-gray-400">Server endpoints on Netlify are having issues. Site is in development mode.</p>
+                    <NuxtLink to="/" class="text-primary mt-5 underline">Back to home</NuxtLink>
+                </div>
+            </template>
+        </UModal>
     </main>
 </template>
