@@ -34,13 +34,15 @@ const deleteReviewHandler = () => refresh();
         <div class="p-4">
             <div class="flex justify-between">
                 <h2 class="text-sm">Reviews ({{ count }} total)</h2>
-                <UButton @click="openReviewModal" icon="i-lucide-plus" size="md" color="secondary" variant="solid" class="cursor-pointer">
+                <UButton @click="openReviewModal" icon="i-lucide-plus" size="md" color="secondary" variant="solid"
+                    class="cursor-pointer">
                     Write a review</UButton>
             </div>
             <div class="flex flex-col space-y-3 py-4">
                 <ReviewCard v-for="review in reviews" :key="review.id" :id="review.id" :reviewed_by="review.reviewed_by"
                     :likes="review.likes" :message="review.message" @delete="deleteReviewHandler"
                     @like="() => refresh()" />
+                <ReviewCardSkeleton v-if="status === 'pending'" />
                 <div class="flex justify-center">
                     <UButton v-show="count > to" @click="loadMoreHandle" :loading="status === 'pending'"
                         :disabled="status === 'pending'" size="lg" color="primary" variant="solid"
