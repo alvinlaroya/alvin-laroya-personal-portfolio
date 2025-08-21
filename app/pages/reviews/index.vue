@@ -45,8 +45,8 @@ const developmentModal = ref(true);
                     <h2 class="text-xs mt-1 md:mt-0 order-1 md:order-0">Reviews <span class="text-secondary">({{ count
                             }}
                             total)</span></h2>
-                    <USelect v-model="selectedFilters" color="ghost" highlight :items="filters"
-                        class="w-full mt-2 md:mt-0 md:w-48 order-0 md:order-1 text-xs" />
+                    <!-- <USelect v-model="selectedFilters" color="ghost" highlight :items="filters"
+                        class="w-full mt-2 md:mt-0 md:w-48 order-0 md:order-1 text-xs" /> -->
                 </div>
             </div>
             <div class="flex flex-col space-y-3 py-4">
@@ -72,7 +72,8 @@ const developmentModal = ref(true);
                         in development mode.</p>
                     <div class="flex space-x-4 justify-end">
                         <NuxtLink to="/" class="text-primary underline">Back to home</NuxtLink>
-                        <UButton @click="() => developmentModal = false" size="sm" color="error" variant="solid" class="flex cursor-pointer">
+                        <UButton @click="() => developmentModal = false" size="sm" color="error" variant="solid"
+                            class="flex cursor-pointer">
                             Close
                         </UButton>
                     </div>

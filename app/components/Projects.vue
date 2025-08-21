@@ -1,6 +1,14 @@
 <script setup>
 const projects = [
     {
+        src: '/projects/wise.webp',
+        link: 'https://github.com/alvinlaroya/dal2.0',
+        title: 'Wise - Headless Shopify CMS',
+        description: 'A custom CMS built for a headless Shopify store, enabling easy management of products, content, and storefront data.',
+        stacks: ['svelte', 'tailwind'],
+        isInternal: true
+    },
+    {
         src: '/projects/dal.webp',
         link: 'https://github.com/alvinlaroya/dal2.0',
         title: 'Digital Assets Library',
@@ -14,6 +22,14 @@ const projects = [
         title: 'Archintel Corp. Chasis',
         description: 'Developed a custom Shopify store powered by Nuxt.js and the Shopify Storefront API, delivering a fast, headless e-commerce experience with optimized performance, seamless product browsing, and a fully tailored frontend design.',
         stacks: ['vue', 'vuetify'],
+        isInternal: true
+    },
+    {
+        src: '/projects/skood.webp',
+        link: 'https://github.com/alvinlaroya/vue-vuex-vuetify-router/tree/master',
+        title: 'Skood',
+        description: 'A dashboard application for managing restaurant clients and their food products, making it easy to add, organize, and track client details and menus.',
+        stacks: ['vue', 'vuetify', 'firebase'],
         isInternal: true
     },
     {
@@ -37,14 +53,14 @@ const projects = [
 
 <template>
     <div id="portfolio">
-        <h2 class="text-xl font-semibold">Portfolio</h2>
-        <div class="text-sm mt-3 grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <!-- Card 1 -->
-            <div v-for="(project, idx) in projects" :key="idx"
-                class="group relative h-54 rounded-lg shadow-2xl cursor-pointer transform transition-all duration-500 hover:shadow-3xl my-5">
+        <h2 class="text-xl font-semibold">Projects</h2>
+        <UCarousel v-slot="{ item: project }" arrows dots class-names :items="projects"
+            :ui="{ item: 'base-1 lg:basis-1/2' }">
+            <div
+                class="group relative rounded-lg shadow-2xl cursor-pointer transform transition-all duration-500 hover:shadow-3xl my-5">
                 <!-- Image Container with overlay content -->
-                <div class="relative w-full h-full overflow-hidden rounded-lg">
-                    <NuxtImg :src="project.src" fit="cover" alt="profile-image" width="380" height="200"
+                <div class="relative w-full h-54 overflow-hidden rounded-lg">
+                    <NuxtImg :src="project.src" fit="cover" alt="profile-image" width="500" height="350"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
 
                     <!-- Dark overlay that appears on hover -->
@@ -55,7 +71,7 @@ const projects = [
                     <!-- Content overlay -->
                     <div class="absolute inset-0 flex flex-col justify-center items-center text-white p-6 text-center">
                         <h3
-                            class="text-xl font-bold mb-3 transform translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-200">
+                            class="text-sm font-bold mb-3 transform translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-200">
                             {{ project.title }}
                         </h3>
                         <p
@@ -68,22 +84,20 @@ const projects = [
                             class="transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-400">
                             <a :href="project.isInternal ? '/' : project.link"
                                 :target="project.isInternal ? '' : '_blank'"
-                                class="px-6 py-3 bg-primary text-black rounded-lg text-sm font-medium hover:bg-black hover:text-white duration-200 shadow-lg">
+                                class="px-4 py-1 bg-primary text-black rounded-lg text-sm font-medium hover:bg-black hover:text-white duration-200 shadow-lg">
                                 Explore Now
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="flex justify-between items-center py-1 mt-1 px-1">
-                    <UBadge v-show="project.isInternal" class="font-normal" color="neutral" variant="outline">Internal</UBadge>
-                    <div class="flex space-x-1.5">
-                        <UTooltip v-for="stack in project.stacks" :text="stack">
-                            <img :src="`/svg/${stack}.svg`" class="h-4 w-4" :alt="stack" />
-                        </UTooltip>
-                    </div>
+                    <span class="text-sm text-white">{{ project.title }}</span>
+                    <UBadge v-if="project.isInternal" class="font-normal" color="neutral" variant="outline">
+                        Internal
+                    </UBadge>
                 </div>
             </div>
-        </div>
+        </UCarousel>
     </div>
 </template>
 
