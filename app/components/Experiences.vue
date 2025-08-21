@@ -49,9 +49,12 @@ function capitalize(str) {
                     </div>
                     <h2 class="font-semibold text-lg">{{ selectedExperience.position }}</h2>
                     <div class="flex space-x-2 text-sm tracking-wider">
-                        <h2 class="font-semibold">Company:</h2>
-                        <span class="text-gray-300"><span class="text-primary">{{ selectedExperience.company }}</span> -
-                            {{ selectedExperience.address }}</span>
+                        <Icon name="lucide:building-2" size="1rem" />
+                        <span class="text-gray-300">{{ selectedExperience.company }}</span>
+                    </div>
+                    <div class="flex space-x-2 text-sm tracking-wider -mt-3">
+                        <Icon name="lucide:map-pin" size="1rem" />
+                        <span class="text-gray-300">{{ selectedExperience.address }}</span>
                     </div>
                     <div class="flex flex-col">
                         <h2 class="font-normal text-sm tracking-wider">Technologies Stack:</h2>

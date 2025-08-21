@@ -50,9 +50,7 @@ const informations = [
                     </div>
                     <div class="mt-2">
                         <h2 class="text-sm text-gray-200">Hobbies:</h2>
-                        <span class="text-gray-400 text-xs">Coding • Playing Guitar • Singing • FPS Gaming • Coffee
-                            Hopping
-                            • Nature Travel</span>
+                        <span class="text-gray-400 text-xs">Coding • Playing Guitar • Singing • FPS Gaming • Coffee • Nature Travel</span>
                     </div>
                 </div>
                 <Connections class="hidden lg:block" />

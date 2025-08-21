@@ -1,4 +1,10 @@
 <script setup lang="ts">
+const props = defineProps({
+    color: {
+        default: 'bg-primary'
+    }
+})
+
 const toast = useToast()
 
 function showToast() {
@@ -15,8 +21,8 @@ function showToast() {
 </script>
 
 <template>
-    <button @click="showToast"
-        class="group bg-primary hover:bg-primary-500 text-black px-3 py-2 flex items-center rounded-lg text-sm font-medium hover:cursor-pointer">
+    <button @click="showToast" :class="[props.color, { 'text-white': props.color === 'bg-black' }]"
+        class="group hover:bg-primary-500 text-black px-3 py-2 flex items-center rounded-lg text-sm font-medium hover:cursor-pointer">
         <Icon name="lucide:download" size="1rem" class="mr-2 group-hover:scale-110 transition-all" /> Download CV
     </button>
 </template>

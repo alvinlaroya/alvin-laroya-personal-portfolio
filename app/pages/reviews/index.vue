@@ -17,6 +17,9 @@ const { data, status, refresh } = await useFetch('/api/reviews', {
 const reviews = computed(() => data.value.reviews.data);
 const count = computed(() => data.value.reviews.count);
 
+const filters = ref(['New to Old', 'Old to New', 'Top Voted'])
+const selectedFilters = ref('New to Old')
+
 const submitReviewHandler = () => {
     refresh();
     openModal.value = false;
@@ -32,11 +35,17 @@ const deleteReviewHandler = () => refresh();
 <template>
     <main class="flex-1 min-h-screen p-4 lg:pr-4 flex flex-col space-y-9">
         <div class="p-4">
-            <div class="flex justify-between">
-                <h2 class="text-sm">Reviews ({{ count }} total)</h2>
-                <UButton @click="openReviewModal" icon="i-lucide-plus" size="md" color="secondary" variant="solid"
-                    class="cursor-pointer">
-                    Write a review</UButton>
+            <div class="bg-[#021526] md:bg-[#03101d] p-2 sticky top-14 z-50">
+                <div class="flex flex-col md:flex-row justify-between items-end md:items-center">
+                    <UButton @click="openReviewModal" icon="i-lucide-plus" size="md" color="secondary" variant="solid"
+                        class="cursor-pointer w-full md:w-auto">
+                        Write a review</UButton>
+                    <h2 class="text-sm mt-1 md:mt-0 order-1 md:order-0">Reviews <span class="text-secondary">({{ count
+                            }}
+                            total)</span></h2>
+                    <USelect v-model="selectedFilters" color="neutral" highlight :items="filters"
+                        class="w-full mt-2 md:mt-0 md:w-48 order-0 md:order-1" />
+                </div>
             </div>
             <div class="flex flex-col space-y-3 py-4">
                 <ReviewCard v-for="review in reviews" :key="review.id" :id="review.id" :reviewed_by="review.reviewed_by"
