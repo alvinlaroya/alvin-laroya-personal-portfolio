@@ -1,5 +1,6 @@
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/__render"
-  status = 200
-  force = true
+[build]
+  command = "npm run build"
+  publish = ".output/public"
+
+[functions]
+  directory = ".netlify/functions"
