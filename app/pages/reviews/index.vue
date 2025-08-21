@@ -39,14 +39,14 @@ const developmentModal = ref(true);
         <div class="p-4">
             <div class="bg-[#021526] md:bg-[#03101d] p-2 sticky top-14 z-50">
                 <div class="flex flex-col md:flex-row justify-between items-end md:items-center">
-                    <UButton @click="openReviewModal" icon="i-lucide-plus" size="md" color="secondary" variant="solid"
-                        class="cursor-pointer w-full md:w-auto">
+                    <UButton @click="openReviewModal" icon="i-lucide-plus" size="sm" color="secondary" variant="solid"
+                        class="cursor-pointer w-full md:w-auto text-xs">
                         Write a review</UButton>
-                    <h2 class="text-sm mt-1 md:mt-0 order-1 md:order-0">Reviews <span class="text-secondary">({{ count
+                    <h2 class="text-xs mt-1 md:mt-0 order-1 md:order-0">Reviews <span class="text-secondary">({{ count
                             }}
                             total)</span></h2>
-                    <USelect v-model="selectedFilters" color="neutral" highlight :items="filters"
-                        class="w-full mt-2 md:mt-0 md:w-48 order-0 md:order-1" />
+                    <USelect v-model="selectedFilters" color="ghost" highlight :items="filters"
+                        class="w-full mt-2 md:mt-0 md:w-48 order-0 md:order-1 text-xs" />
                 </div>
             </div>
             <div class="flex flex-col space-y-3 py-4">
@@ -68,8 +68,14 @@ const developmentModal = ref(true);
             <template #content>
                 <div class="p-4">
                     <h2 class="mb-1">Notice</h2>
-                    <p class="mb-3 text-sm text-gray-400">Server endpoints on Netlify are having issues. Site is in development mode.</p>
-                    <NuxtLink to="/" class="text-primary mt-5 underline">Back to home</NuxtLink>
+                    <p class="mb-3 text-sm text-gray-400">Server endpoints on Netlify are having issues. Reviews page is
+                        in development mode.</p>
+                    <div class="flex space-x-4 justify-end">
+                        <NuxtLink to="/" class="text-primary underline">Back to home</NuxtLink>
+                        <UButton @click="() => developmentModal = false" size="sm" color="error" variant="solid" class="flex cursor-pointer">
+                            Close
+                        </UButton>
+                    </div>
                 </div>
             </template>
         </UModal>

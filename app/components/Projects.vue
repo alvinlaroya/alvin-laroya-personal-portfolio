@@ -40,7 +40,7 @@ const projects = [
                 class="group relative h-54 rounded-lg shadow-2xl cursor-pointer transform transition-all duration-500 hover:shadow-3xl my-5">
                 <!-- Image Container with overlay content -->
                 <div class="relative w-full h-full overflow-hidden rounded-lg">
-                    <NuxtImg :src="project.src" fit="cover" alt="profile-image" width="500" height="300"
+                    <NuxtImg :src="project.src" fit="cover" alt="profile-image" width="380" height="200"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
 
                     <!-- Dark overlay that appears on hover -->

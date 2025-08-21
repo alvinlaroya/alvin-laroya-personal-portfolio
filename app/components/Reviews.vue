@@ -12,7 +12,7 @@ const count = computed(() => data.value.reviews.count);
         </h2>
         <div class="flex justify-between">
             <p class="text-gray-600 mb-7">
-                What people say about my portfolio
+                What people say about my portfolio.
             </p>
             <NuxtLink to="/reviews" class="text-secondary text-sm hover:underline">View All</NuxtLink>
         </div>
@@ -23,7 +23,13 @@ const count = computed(() => data.value.reviews.count);
                 <p class="text-[16px] font-normal text-white">
                     {{ review?.message || '' }}
                 </p>
-                <cite class="block text-right mt-4 text-gray-600">- {{ review?.reviewed_by || '' }}</cite>
+                <div class="flex justify-between">
+                    <div v-if="review.likes > 0" class="flex space-x-2 text-gray-400 text-xs items-center">
+                        <Icon name="lucide:arrow-big-up" size="1.2rem" />
+                        <span>{{ review.likes }} upvotes</span>
+                    </div>
+                    <cite class="block text-right mt-4 text-gray-600">- {{ review?.reviewed_by || '' }}</cite>
+                </div>
             </blockquote>
         </div>
     </div>

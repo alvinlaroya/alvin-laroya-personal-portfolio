@@ -26,7 +26,7 @@ const testimonials = [
     },
     {
         text: "Alvin is a reliable and talented developer. They’re great at solving problems, writing clean code, and working well with the team.",
-        author: "Joshua Cucueco",
+        author: "Allan Rosero",
         position: "Programmer I, DSWD Region 1",
         avatar: "/testimonials/joshua.webp",
     },
@@ -39,7 +39,7 @@ const testimonials = [
             Testimonials
         </h2>
         <p class="text-gray-600 mb-7">
-            What people say about working with me
+            What people say about working with me.
         </p>
 
         <div class="">
