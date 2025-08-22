@@ -2,9 +2,14 @@
 import { experiences } from '~/assets/experiences.json'
 const openDrawer = ref(false);
 const selectedExperience = ref(null);
-const selectExperienceHandler = (value) => {
+const { create } = useLogs();
+const selectExperienceHandler = async (value) => {
     selectedExperience.value = value;
     openDrawer.value = true;
+    await create({
+        action: 'view_experience',
+        description: `Someone viewed your experience in ${value.company}`,
+    })
 }
 const closeDrawer = () => openDrawer.value = !openDrawer.value;
 
