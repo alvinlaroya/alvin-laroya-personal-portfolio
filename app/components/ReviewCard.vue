@@ -15,8 +15,6 @@ const {
     likes = 0
 } = defineProps<ReviewProps>();
 
-
-const localLikes = ref(likes);
 const supabase = useSupabaseClient();
 const emit = defineEmits(['delete', 'like'])
 const isDeleting = ref(false);
@@ -78,8 +76,7 @@ const incrementLikeHandler = async () => {
         .rpc('increment_likes', { row_id: id })
 
     if (!error) {
-        //emit('like') temporary disabled due to netlify server api issue
-        localLikes.value = data?.likes
+        emit('like');
         isLiking.value = false;
         toast.add({
             title: 'Liked',
@@ -103,10 +100,10 @@ const incrementLikeHandler = async () => {
             <div class="flex items-center gap-4">
                 <div class="flex justify-between w-full items-center">
                     <UButton @click="incrementLikeHandler" :loading="isLiking" :disabled="isLiking"
-                        icon="i-lucide-arrow-big-up" size="sm" :color="localLikes > 0 ? 'primary' : 'neutral'"
+                        icon="i-lucide-arrow-big-up" size="sm" :color="likes > 0 ? 'primary' : 'neutral'"
                         variant="ghost" class="cursor-pointer group"
                         :ui="{ leadingIcon: 'group-hover:animate-pulse group-hover:scale-125 duration-300' }">{{
-                            localLikes
+                            likes
                         }}
                     </UButton>
                     <div class="flex items-center space-x-4">

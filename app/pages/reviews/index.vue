@@ -32,6 +32,8 @@ const loadMoreHandle = () => {
     to.value = to.value + 7
 }
 
+const likeHandler = () => refresh();
+
 const deleteReviewHandler = () => refresh();
 
 const developmentModal = ref(false);
@@ -68,7 +70,7 @@ const developmentModal = ref(false);
             </div>
             <div class="flex flex-col space-y-3 py-4">
                 <ReviewCard v-for="review in reviews" :key="review.id" :id="review.id" :reviewed_by="review.reviewed_by"
-                    :likes="review.likes" :message="review.message" @delete="deleteReviewHandler" />
+                    :likes="review.likes" :message="review.message" @like="likeHandler" @delete="deleteReviewHandler" />
                 <ReviewCardSkeleton v-if="status === 'pending'" />
                 <div class="flex justify-center">
                     <UButton v-show="count > to" @click="loadMoreHandle" :loading="status === 'pending'"
