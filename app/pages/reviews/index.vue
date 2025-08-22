@@ -15,16 +15,14 @@ const { data, status, refresh } = await useFetch('/api/reviews', {
     }))
 })
 
-const localReviews = reactive([]);
-const reviews = computed(() => [...localReviews, ...data.value.reviews.data]);
+const reviews = computed(() => data.value.reviews.data);
 const count = computed(() => data.value.reviews.count);
 
 const filters = ref(['New to Old', 'Old to New', 'Top Voted'])
 const selectedFilters = ref('New to Old')
 
 const submitReviewHandler = (data) => {
-    /// refresh(); temporary disable due to netlify server api issue
-    localReviews.push(data[0]);
+    refresh();
     openModal.value = false;
 }
 

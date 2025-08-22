@@ -23,7 +23,6 @@ const form = ref();
 const handleSubmit = async () => {
     await form.value.submit()
 }
-
 const emit = defineEmits(['submit'])
 async function onSubmit(event: FormSubmitEvent<Schema>) {
     event.preventDefault();
@@ -46,9 +45,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
                 description: 'Your review has been submitted successfully!',
                 color: 'primary'
             });
-
-            const result = await response.json();
-            emit('submit')
+            emit('submit');
 
             // Reset form after successful submission
             state.name = undefined;
@@ -58,6 +55,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
             console.error('Submit Review Error:', errorData);
             throw new Error(`Failed to submit review: ${response.status}`);
         }
+
     } catch (error) {
         console.error("Error submitting review:", error);
         toast.add({
