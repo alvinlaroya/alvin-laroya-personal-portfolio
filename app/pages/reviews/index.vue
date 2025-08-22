@@ -36,8 +36,8 @@ const developmentModal = ref(false);
 </script>
 
 <template>
-    <main class="flex-1 min-h-screen p-4 lg:pr-4 flex flex-col space-y-9">
-        <div class="p-4">
+    <main class="flex-1 min-h-screen px-2 lg:px-0 py-4 flex flex-col space-y-9">
+        <div class="px-4">
             <UBreadcrumb :items="[
                 {
                     label: 'Home',
@@ -52,10 +52,10 @@ const developmentModal = ref(false);
                     <span class="mx-2 text-muted">/</span>
                 </template>
             </UBreadcrumb>
-            <div class="bg-[#021526] md:bg-[#03101d] p-2 sticky top-16 z-20 mt-4">
-                <div class="flex flex-col md:flex-row justify-between items-end md:items-center">
-                    <UButton @click="openReviewModal" icon="i-lucide-plus" size="sm" color="secondary" variant="solid"
-                        class="cursor-pointer w-full md:w-auto text-xs">
+            <div class="bg-[#021526] lg:px-2 md:bg-[#03101d] py-2 sticky top-16 z-20 mt-4">
+                <div class="flex md:flex-row justify-between items-center">
+                    <UButton @click="openReviewModal" icon="i-lucide-plus" size="lg" color="secondary" variant="solid"
+                        class="cursor-pointer w-auto text-xs">
                         Write a review</UButton>
                     <h2 class="text-xs mt-1 md:mt-0 order-1 md:order-0">Reviews
                         <span class="text-secondary"> {{ count }} total</span>

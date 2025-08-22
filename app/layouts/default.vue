@@ -12,7 +12,7 @@ provide('admin', admin)
             <!-- Container for Sidebar and Main Content -->
             <div class="flex flex-col md:flex-row">
                 <!-- Sidebar - Sticky below navbar -->
-                <PersonalInformation />
+                <PersonalInformation :class="{ 'hidden lg:block': route.path === '/reviews' }" />
                 <slot />
             </div>
             <Chat />
