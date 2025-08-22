@@ -4,9 +4,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/ui', '@nuxt/image', '@nuxtjs/supabase', '@pinia/nuxt'],
   css: ['~/assets/css/main.css'],
-  nitro: {
-    preset: 'netlify'
-  },
   runtimeConfig: {
     public: {
       adminKey: process.env.NUXT_PUBLIC_ADMIN_KEY,
