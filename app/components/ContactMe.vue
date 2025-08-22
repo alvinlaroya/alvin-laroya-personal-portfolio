@@ -76,28 +76,30 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 
 <template>
     <div class="w-full">
-        <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
-            <UFormField label="Name" name="name">
-                <UInput v-model="state.name" size="xl" class="w-full" :disabled="isSubmitting" />
-            </UFormField>
+        <ClientOnly>
+            <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
+                <UFormField label="Name" name="name">
+                    <UInput v-model="state.name" size="xl" class="w-full" :disabled="isSubmitting" />
+                </UFormField>
 
-            <UFormField label="Email" name="email">
-                <UInput v-model="state.email" size="xl" class="w-full" :disabled="isSubmitting" />
-            </UFormField>
+                <UFormField label="Email" name="email">
+                    <UInput v-model="state.email" size="xl" class="w-full" :disabled="isSubmitting" />
+                </UFormField>
 
-            <UFormField label="Subject" name="subject">
-                <UInput v-model="state.subject" size="xl" class="w-full" :disabled="isSubmitting" />
-            </UFormField>
+                <UFormField label="Subject" name="subject">
+                    <UInput v-model="state.subject" size="xl" class="w-full" :disabled="isSubmitting" />
+                </UFormField>
 
-            <UFormField label="Message" name="message">
-                <UTextarea v-model="state.message" size="xl" placeholder="Type your message here..." class="w-full"
-                    :disabled="isSubmitting" />
-            </UFormField>
+                <UFormField label="Message" name="message">
+                    <UTextarea v-model="state.message" size="xl" placeholder="Type your message here..." class="w-full"
+                        :disabled="isSubmitting" />
+                </UFormField>
 
-            <UButton type="submit" class="w-full flex items-center justify-center cursor-pointer" size="xl"
-                :loading="isSubmitting" :disabled="isSubmitting">
-                {{ isSubmitting ? 'Sending...' : 'Send Message' }}
-            </UButton>
-        </UForm>
+                <UButton type="submit" class="w-full flex items-center justify-center cursor-pointer" size="xl"
+                    :loading="isSubmitting" :disabled="isSubmitting">
+                    {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+                </UButton>
+            </UForm>
+        </ClientOnly>
     </div>
 </template>
