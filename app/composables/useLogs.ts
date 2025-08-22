@@ -1,6 +1,10 @@
 export const useLogs = () => {
-    const supabase = useSupabaseClient()
+    const config = useRuntimeConfig();
+    const supabase = useSupabaseClient();
+
     const create = async (payload: { action: string; description: string }) => {
+        if (config.public.environment === 'develop') return;
+        
         const { data, error } = await supabase
             .from('logs')
             .insert({

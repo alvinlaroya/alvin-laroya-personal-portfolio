@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     public: {
+      environment: process.env.NUXT_PUBLIC_DEV_ENVIRONMENT,
       adminKey: process.env.NUXT_PUBLIC_ADMIN_KEY,
       n8nWebhookUrl: process.env.NUXT_PUBLIC_N8N_WEBHOOK_URL,
     },

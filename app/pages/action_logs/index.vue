@@ -1,7 +1,7 @@
 <script setup>
 const from = ref(0);
 const to = ref(25);
-const { data, status, refresh } = await useFetch('/api/logs', {
+const { data, status, refresh } = await useFetch('/api/action_logs', {
     query: computed(() => ({
         from: from.value,
         to: to.value
