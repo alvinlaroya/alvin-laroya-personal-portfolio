@@ -35,7 +35,7 @@ const informations = [
             <div class="flex flex-col justify-center">
                 <h2 class="text-left lg:text-center text-xl lg:text-2xl mb-2 font-semibold">Alvin Laroya</h2>
                 <div v-for="(info, i) in informations" :key="i"
-                    class="flex space-x-3 items-center mb-0 lg:mb-1.5 text-gray-300">
+                    class="flex space-x-3 items-center mb-0 lg:mb-1.5 text-gray-300" :class="{ 'hidden lg:flex': i >= 4 }">
                     <div class="flex">
                         <Icon :name="info.icon" size="1rem" />
                     </div>
