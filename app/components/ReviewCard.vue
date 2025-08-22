@@ -16,42 +16,12 @@ const {
 } = defineProps<ReviewProps>();
 
 const supabase = useSupabaseClient();
-const emit = defineEmits(['delete', 'like'])
+const emit = defineEmits(['delete', 'like']);
+
 const isDeleting = ref(false);
 const toast = useToast();
 const deleteReview = async () => {
     isDeleting.value = true;
-    try {
-        const { error } = await supabase
-            .from('reviews')
-            .delete()
-            .eq('id', id)
-
-        if (error) {
-            return toast.add({
-                title: 'Error',
-                description: error,
-                color: 'error'
-            });
-        }
-
-        isDeleting.value = false;
-        emit('delete');
-        toast.add({
-            title: 'Success',
-            description: 'Review deleted successfully',
-            color: 'primary'
-        });
-    } catch (error) {
-        if (error) {
-            toast.add({
-                title: 'Error',
-                description: error,
-                color: 'error'
-            });
-        }
-    }
-    /* TEMPORARY UNUSED DUE TO NETLIFY NITRO SERVER ISSUE
     try {
         await $fetch(`/api/reviews/${id}`, {
             method: 'DELETE'
@@ -66,7 +36,7 @@ const deleteReview = async () => {
         emit('delete');
     } catch (error) {
         console.log("Error deleting review", error)
-    } */
+    }
 }
 
 const isLiking = ref(false);
