@@ -1,5 +1,5 @@
 <script setup>
-const isOpen = ref(true);
+const isOpen = ref(false);
 const message = ref('');
 const isSending = ref(false);
 const messagesContainer = ref(null);
