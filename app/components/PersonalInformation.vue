@@ -46,7 +46,7 @@ const informations = [
                 <USeparator class="mt-3 hidden lg:block" />
                 <div class="hidden lg:block">
                     <div class="mt-3">
-                        <h2 class="text-sm text-gray-200">Pronounce: <span class="text-gray-400">he/his</span></h2>
+                        <h2 class="text-sm text-gray-200">Pronounce: <span class="text-gray-400">Hi/Him</span></h2>
                     </div>
                     <div class="mt-3">
                         <h2 class="text-sm text-gray-200">Hobbies:</h2>
