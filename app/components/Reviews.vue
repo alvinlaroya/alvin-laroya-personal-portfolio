@@ -2,6 +2,14 @@
 const { data, status, refresh } = await useFetch('/api/reviews?from=0&to=2')
 const reviews = computed(() => data.value.reviews.data);
 const count = computed(() => data.value.reviews.count);
+
+const { create } = useLogs();
+const viewAllHandler = async () => {
+    await create({
+        action: 'view_reviews',
+        description: `Someone viewed your reviews page.`,
+    })
+}
 </script>
 
 
@@ -14,7 +22,7 @@ const count = computed(() => data.value.reviews.count);
             <p class="text-gray-600 mb-7">
                 What people say about my portfolio.
             </p>
-            <NuxtLink to="/reviews" class="text-secondary text-sm hover:underline">View All</NuxtLink>
+            <UButton label="View all" to="/reviews" @click="viewAllHandler" size="sm" class="h-8" />
         </div>
 
         <div class="grid grid-cols-1">

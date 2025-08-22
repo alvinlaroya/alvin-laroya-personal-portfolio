@@ -49,10 +49,18 @@ const projects = [
         isInternal: false
     }
 ]
+
+const { create } = useLogs();
+const exploreNowHandler = async (project) => {
+    await create({
+        action: 'view_project',
+        description: `Someone viewed your project - ${project}`,
+    })
+}
 </script>
 
 <template>
-    <div id="portfolio" >
+    <div id="portfolio">
         <h2 class="text-xl font-semibold">Projects</h2>
         <UCarousel v-slot="{ item: project }" arrows dots class-names :items="projects"
             :ui="{ item: 'base-1 lg:basis-1/2' }">
@@ -83,7 +91,7 @@ const projects = [
                         <div
                             class="transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-400">
                             <a :href="project.isInternal ? '/' : project.link"
-                                :target="project.isInternal ? '' : '_blank'"
+                                :target="project.isInternal ? '' : '_blank'" @click="exploreNowHandler(project.title)"
                                 class="px-4 py-1 bg-primary text-black rounded-lg text-sm font-medium hover:bg-black hover:text-white duration-200 shadow-lg">
                                 Explore Now
                             </a>

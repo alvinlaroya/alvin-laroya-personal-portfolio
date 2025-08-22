@@ -12,7 +12,7 @@ const messages = reactive([
     }
 ]);
 
-const toggleChat = () => {
+const toggleChat = async () => {
     isOpen.value = !isOpen.value;
 };
 
@@ -28,6 +28,7 @@ const scrollToBottom = async () => {
 };
 
 const config = useRuntimeConfig();
+const { create } = useLogs();
 const sendMessage = async () => {
     if (!message.value.trim() || isSending.value) return;
 
@@ -40,6 +41,11 @@ const sendMessage = async () => {
         message: userMessage,
         timestamp: new Date()
     });
+
+    await create({
+        action: 'chat_bot',
+        description: `Someone chat to your agent - ${userMessage}`,
+    })
 
     message.value = '';
     await scrollToBottom();
