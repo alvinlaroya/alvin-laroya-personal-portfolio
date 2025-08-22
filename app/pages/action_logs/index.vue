@@ -77,14 +77,14 @@ const formatDate = (dateString) => {
         <div class="w-full flex justify-between bg-[#03101d] p-4 rounded-lg">
             <h2>Logs History</h2>
             <div class="flex space-x-3">
-                <UBadge color="secondary" class="text-white">{{ count }} total logs</UBadge>
+                <UBadge color="info" class="text-white">{{ count }} logs</UBadge>
                 <UBadge v-if="unreadCount > 0" color="error" class="text-white">{{ unreadCount }} unread</UBadge>
             </div>
         </div>
         <div class="flex flex-col w-full px-1">
             <div v-for="date in sortedDates" :key="date" class="mb-4">
                 <!-- Date Separator -->
-                <div class="flex items-center my-6">
+                <div class="flex items-center my-4">
                     <div class="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
                     <div class="px-4 text-sm font-medium text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900">
                         {{ formatDate(date) }}
@@ -106,12 +106,13 @@ const formatDate = (dateString) => {
                                 class="text-primary text-xl my-1.5 mr-4.5" />
                             <div v-else class="flex items-center ml-2">
                                 <Icon v-if="log.action === 'download_cv'" name="lucide:download" size="1.4rem"
-                                    class="text-primary" />
+                                    :class="log.unread ? 'text-primary' : 'text-gray-500'" />
                                 <Icon
                                     v-if="log.action === 'view_project' || log.action === 'view_reviews' || log.action === 'view_experience'"
-                                    name="lucide:eye" size="1.4rem" class="text-primary" />
+                                    name="lucide:eye" size="1.4rem"
+                                    :class="log.unread ? 'text-primary' : 'text-gray-500'" />
                                 <Icon v-if="log.action === 'chat_bot'" name="lucide:bot" size="1.4rem"
-                                    class="text-primary" />
+                                    :class="log.unread ? 'text-primary' : 'text-gray-500'" />
                             </div>
                             <p style="margin-left: 0.5rem">{{ log.description }}</p>
                         </div>

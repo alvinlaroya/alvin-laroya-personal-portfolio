@@ -2,7 +2,7 @@
 const projects = [
     {
         src: '/projects/wise.webp',
-        link: 'https://github.com/alvinlaroya/dal2.0',
+        link: 'https://www.loom.com/share/2b41e989f13e42d88dfb49b4bc8a733b',
         title: 'Wise - Headless Shopify CMS',
         description: 'A custom CMS built for a headless Shopify store, enabling easy management of products, content, and storefront data.',
         stacks: ['svelte', 'tailwind'],
@@ -90,8 +90,8 @@ const exploreNowHandler = async (project) => {
                         <!-- Button that slides in -->
                         <div
                             class="transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-400">
-                            <a :href="project.isInternal ? '/' : project.link"
-                                :target="project.isInternal ? '' : '_blank'" @click="exploreNowHandler(project.title)"
+                            <a :href="project.link"
+                                target="'_blank'" @click="exploreNowHandler(project.title)"
                                 class="px-4 py-1 bg-primary text-black rounded-lg text-sm font-medium hover:bg-black hover:text-white duration-200 shadow-lg">
                                 Explore Now
                             </a>
