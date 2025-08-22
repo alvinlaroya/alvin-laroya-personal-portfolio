@@ -1,5 +1,27 @@
 <script setup>
 const route = useRoute();
+const links = [
+    {
+        label: 'Home',
+        link: '/',
+        section: 'home'
+    },
+    {
+        label: 'About',
+        link: undefined,
+        section: 'about'
+    },
+    {
+        label: 'Experience',
+        link: undefined,
+        section: 'experience'
+    },
+    {
+        label: 'Portfolio',
+        link: undefined,
+        section: 'portfolio'
+    }
+]
 const activeLink = ref('home');
 function scrollToSection(section, offset = 0) {
     activeLink.value = section;
@@ -19,19 +41,19 @@ function scrollToSection(section, offset = 0) {
                 <!-- Navigation Links -->
                 <div class="hidden md:block">
                     <div class="flex items-center space-x-4">
-                        <NuxtLink to="/" :class="{ 'text-primary border-b': activeLink === 'home' && route.path === '/' }"
-                            @click="scrollToSection('home', -80)"
-                            class="hover:text-primary px-3 py-2 text-sm font-normal tracking-wide">Home
-                        </NuxtLink>
-                        <a :class="{ 'text-primary border-b': activeLink === 'about' }" href="#"
-                            @click="scrollToSection('about', -80)"
-                            class="hover:text-primary px-3 py-2 text-sm font-normal tracking-wide">About</a>
-                        <a :class="{ 'text-primary border-b': activeLink === 'experience' }" href="#"
-                            @click="scrollToSection('experience', -80)"
-                            class="hover:text-primary px-3 py-2 text-sm font-normal tracking-wide">Experience</a>
-                        <a :class="{ 'text-primary border-b': activeLink === 'portfolio' }" href="#"
-                            @click="scrollToSection('portfolio', -80)"
-                            class="hover:text-primary px-3 py-2 text-sm font-normal tracking-wide">Portfolio</a>
+                        <div v-for="item in links" :key="item.section">
+                            <NuxtLink v-if="item?.link" to="/"
+                                :class="{ 'text-primary border-b': activeLink === 'home' && route.path === '/' }"
+                                @click="scrollToSection('home', -80)"
+                                class="hover:text-primary px-3 py-2 text-sm font-normal tracking-wide">Home
+                            </NuxtLink>
+                            <a v-else
+                                :class="{ 'text-primary border-b': activeLink === item.section && route.path === '/' }"
+                                href="#" @click="scrollToSection(item.section, -80)"
+                                class="hover:text-primary px-3 py-2 text-sm font-normal tracking-wide">
+                                {{ item.label }}
+                            </a>
+                        </div>
                     </div>
                 </div>
 

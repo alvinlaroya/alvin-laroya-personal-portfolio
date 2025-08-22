@@ -14,14 +14,17 @@ const { data, status, refresh } = await useFetch('/api/reviews', {
         to: to.value
     }))
 })
-const reviews = computed(() => data.value.reviews.data);
+
+const localReviews = reactive([]);
+const reviews = computed(() => [...localReviews, ...data.value.reviews.data]);
 const count = computed(() => data.value.reviews.count);
 
 const filters = ref(['New to Old', 'Old to New', 'Top Voted'])
 const selectedFilters = ref('New to Old')
 
-const submitReviewHandler = () => {
-    refresh();
+const submitReviewHandler = (data) => {
+    /// refresh(); temporary disable due to netlify server api issue
+    localReviews.push(data[0]);
     openModal.value = false;
 }
 
@@ -31,7 +34,7 @@ const loadMoreHandle = () => {
 
 const deleteReviewHandler = () => refresh();
 
-const developmentModal = ref(true);
+const developmentModal = ref(false);
 </script>
 
 <template>
@@ -65,8 +68,7 @@ const developmentModal = ref(true);
             </div>
             <div class="flex flex-col space-y-3 py-4">
                 <ReviewCard v-for="review in reviews" :key="review.id" :id="review.id" :reviewed_by="review.reviewed_by"
-                    :likes="review.likes" :message="review.message" @delete="deleteReviewHandler"
-                    @like="() => refresh()" />
+                    :likes="review.likes" :message="review.message" @delete="deleteReviewHandler" />
                 <ReviewCardSkeleton v-if="status === 'pending'" />
                 <div class="flex justify-center">
                     <UButton v-show="count > to" @click="loadMoreHandle" :loading="status === 'pending'"

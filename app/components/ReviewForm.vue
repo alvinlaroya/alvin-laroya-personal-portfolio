@@ -62,7 +62,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         }
         */
 
-        const { error } = await supabase
+        const { data, error } = await supabase
             .from('reviews')
             .insert({
                 'reviewed_by': state.name,
@@ -83,7 +83,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
             description: 'Your review has been submitted successfully!',
             color: 'primary'
         });
-        emit('submit')
+        emit('submit', data)
 
         // Reset form after successful submission
         state.name = undefined;

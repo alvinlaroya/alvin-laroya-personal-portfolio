@@ -16,6 +16,7 @@ const {
 } = defineProps<ReviewProps>();
 
 
+const localLikes = ref(likes);
 const supabase = useSupabaseClient();
 const emit = defineEmits(['delete', 'like'])
 const isDeleting = ref(false);
@@ -76,18 +77,15 @@ const incrementLikeHandler = async () => {
     const { data, error } = await supabase
         .rpc('increment_likes', { row_id: id })
 
-    emit('like');
-    isLiking.value = false;
-    toast.add({
-        title: 'Liked',
-        description: `You upvoted ${reviewed_by}'s review`,
-        color: 'primary',
-        icon: 'i-lucide-arrow-big-up'
-    });
-    if (error) {
-        console.error('Error:', error)
-    } else {
-        console.log('Likes incremented successfully')
+    if (!error) {
+        localLikes.value = data?.likes
+        isLiking.value = false;
+        toast.add({
+            title: 'Liked',
+            description: `You upvoted ${reviewed_by}'s review`,
+            color: 'primary',
+            icon: 'i-lucide-arrow-big-up'
+        });
     }
 }
 </script>
@@ -104,8 +102,11 @@ const incrementLikeHandler = async () => {
             <div class="flex items-center gap-4">
                 <div class="flex justify-between w-full items-center">
                     <UButton @click="incrementLikeHandler" :loading="isLiking" :disabled="isLiking"
-                        icon="i-lucide-arrow-big-up" size="sm" :color="likes > 0 ? 'primary' : 'neutral'"
-                        variant="ghost" class="cursor-pointer">{{ likes }}
+                        icon="i-lucide-arrow-big-up" size="sm" :color="localLikes > 0 ? 'primary' : 'neutral'"
+                        variant="ghost" class="cursor-pointer group"
+                        :ui="{ leadingIcon: 'group-hover:animate-pulse group-hover:scale-125 duration-300' }">{{
+                            localLikes
+                        }}
                     </UButton>
                     <div class="flex items-center space-x-4">
                         <h4 class="font-normal text-xs text-gray-400">
