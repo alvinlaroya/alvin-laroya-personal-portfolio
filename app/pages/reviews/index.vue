@@ -7,7 +7,7 @@ const openReviewModal = () => openModal.value = !openModal.value;
 provide('open', openModal)
 
 const from = ref(0);
-const to = ref(6);
+const to = ref(7);
 const { data, status, refresh } = await useFetch('/api/reviews', {
     query: computed(() => ({
         from: from.value,
@@ -74,8 +74,10 @@ const developmentModal = ref(false);
                     :likes="review.likes" :message="review.message" @like="isLikingOrDeletingHandler"
                     @delete="isLikingOrDeletingHandler" />
                 <ReviewCardSkeleton v-if="status === 'pending' && !isLikingOrDeleting" />
+                <div v-if="count <= reviews.length" class="text-center pt-4 pb-2 text-gray-400">End of results.
+                </div>
                 <div class="flex justify-center">
-                    <UButton v-show="count > to" @click="loadMoreHandle" :loading="status === 'pending'"
+                    <UButton v-if="count > reviews.length" @click="loadMoreHandle" :loading="status === 'pending'"
                         :disabled="status === 'pending'" size="lg" color="primary" variant="solid"
                         class="w-64 flex justify-center cursor-pointer">Load
                         More
