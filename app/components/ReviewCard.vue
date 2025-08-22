@@ -78,6 +78,7 @@ const incrementLikeHandler = async () => {
         .rpc('increment_likes', { row_id: id })
 
     if (!error) {
+        //emit('like') temporary disabled due to netlify server api issue
         localLikes.value = data?.likes
         isLiking.value = false;
         toast.add({

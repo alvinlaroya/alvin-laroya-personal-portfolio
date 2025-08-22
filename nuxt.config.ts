@@ -5,20 +5,7 @@ export default defineNuxtConfig({
   modules: ['@nuxt/ui', '@nuxt/image', '@nuxtjs/supabase', '@pinia/nuxt'],
   css: ['~/assets/css/main.css'],
   nitro: {
-    preset: 'netlify',
-    experimental: {
-      wasm: true
-    },
-    routeRules: {
-      '/api/**': {
-        cors: true,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With'
-        }
-      }
-    }
+    preset: 'netlify'
   },
   runtimeConfig: {
     public: {
