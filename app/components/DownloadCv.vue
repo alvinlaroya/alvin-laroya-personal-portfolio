@@ -10,7 +10,7 @@ const toast = useToast()
 async function showToast() {
     await create({
         action: 'download_cv',
-        description: `Downloaded your cv at ${new Date()}`,
+        description: `Downloaded your cv.`,
     })
     const link = document.createElement("a");
     link.href = "/alvincv.pdf";
