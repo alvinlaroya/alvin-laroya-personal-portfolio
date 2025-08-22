@@ -5,9 +5,13 @@ const props = defineProps({
     }
 })
 
+const { create } = useLogs();
 const toast = useToast()
-
-function showToast() {
+async function showToast() {
+    await create({
+        action: 'download_cv',
+        description: `Downloaded your cv at ${new Date()}`,
+    })
     const link = document.createElement("a");
     link.href = "/alvincv.pdf";
     link.download = "alvin-laroya-cv.pdf"; // <-- file will be saved as this name

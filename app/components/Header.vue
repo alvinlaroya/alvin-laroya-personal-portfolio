@@ -1,6 +1,4 @@
 <script setup>
-const admin = inject('admin');
-
 const props = defineProps({
     isCms: {
         default: false
@@ -77,7 +75,8 @@ function scrollToSection(section, offset = 0) {
                             <Icon name="lucide:linkedin" size="1.2rem" />
                         </a>
                     </div>
-                    <UButton v-if="props.isCms" to="/" icon="i-lucide-rocket" size="md" color="primary" variant="solid">Preview</UButton>
+                    <UButton v-if="props.isCms" to="/" icon="i-lucide-rocket" size="md" color="primary" variant="solid">
+                        Preview</UButton>
                     <DownloadCv v-else />
                     <!-- <ColorModeButton /> -->
                 </div>
