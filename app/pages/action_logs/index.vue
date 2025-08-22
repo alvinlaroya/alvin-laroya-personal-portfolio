@@ -28,6 +28,7 @@ const readHandler = async (id, unread) => {
 
 const logs = computed(() => data.value.logs.data);
 const count = computed(() => data.value.logs.count);
+const unreadCount = computed(() => data.value.logs.unreadCount);
 
 // Group logs by date
 const groupedLogs = computed(() => {
@@ -75,7 +76,10 @@ const formatDate = (dateString) => {
     <main class="flex-1 min-h-screen px-2 py-4 flex flex-col space-y-4">
         <div class="w-full flex justify-between bg-[#03101d] p-4 rounded-lg">
             <h2>Logs History</h2>
-            <UBadge color="error" class="text-white">{{ count }}</UBadge>
+            <div class="flex space-x-3">
+                <UBadge color="secondary" class="text-white">{{ count }} total logs</UBadge>
+                <UBadge v-if="unreadCount > 0" color="error" class="text-white">{{ unreadCount }} unread</UBadge>
+            </div>
         </div>
         <div class="flex flex-col w-full px-1">
             <div v-for="date in sortedDates" :key="date" class="mb-4">
@@ -111,7 +115,13 @@ const formatDate = (dateString) => {
                             </div>
                             <p style="margin-left: 0.5rem">{{ log.description }}</p>
                         </div>
-                        <span class="text-gray-500 text-xs">{{ new Date(log.created_at).toLocaleString() }}</span>
+                        <span class="text-gray-500 text-xs">
+                            {{ new Date(log.created_at).toLocaleTimeString('en-US', {
+                                hour12: false,
+                                hour: '2-digit',
+                                minute: '2-digit'
+                            }) + (new Date(log.created_at).getHours() >= 12 ? 'PM' : 'AM') }}
+                        </span>
                     </div>
                     <USeparator />
                 </div>

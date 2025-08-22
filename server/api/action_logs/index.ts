@@ -12,10 +12,16 @@ export default defineEventHandler(async (event) => {
         .range(parseInt(from), parseInt(to))
         .order('created_at', { ascending: false })
 
+    const { count: unreadCount } = await client
+        .from('logs')
+        .select('*', { count: 'exact', head: true })
+        .eq('unread', true)
+
     return {
         logs: {
             data,
-            count
+            count,
+            unreadCount
         }
     }
 })
