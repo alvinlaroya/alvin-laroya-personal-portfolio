@@ -30,13 +30,18 @@ const loadMoreHandle = () => {
     to.value = to.value + 7
 }
 
-const refreshDataHandler = () => refresh();
+const isLikingOrDeleting = ref(false);
+const isLikingOrDeletingHandler = async () => {
+    isLikingOrDeleting.value = true;
+    await refresh();
+    isLikingOrDeleting.value = false
+}
 
 const developmentModal = ref(false);
 </script>
 
 <template>
-    <main class="flex-1 min-h-screen px-2 lg:px-0 py-4 flex flex-col space-y-9">
+    <main class="flex-1 min-h-screen px-2 py-4 flex flex-col space-y-9">
         <div class="px-4">
             <UBreadcrumb :items="[
                 {
@@ -66,9 +71,9 @@ const developmentModal = ref(false);
             </div>
             <div class="flex flex-col space-y-3 py-4">
                 <ReviewCard v-for="review in reviews" :key="review.id" :id="review.id" :reviewed_by="review.reviewed_by"
-                    :likes="review.likes" :message="review.message" @like="refreshDataHandler"
-                    @delete="refreshDataHandler" />
-                <ReviewCardSkeleton v-if="status === 'pending'" />
+                    :likes="review.likes" :message="review.message" @like="isLikingOrDeletingHandler"
+                    @delete="isLikingOrDeletingHandler" />
+                <ReviewCardSkeleton v-if="status === 'pending' && !isLikingOrDeleting" />
                 <div class="flex justify-center">
                     <UButton v-show="count > to" @click="loadMoreHandle" :loading="status === 'pending'"
                         :disabled="status === 'pending'" size="lg" color="primary" variant="solid"

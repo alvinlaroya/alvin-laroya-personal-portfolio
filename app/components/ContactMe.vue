@@ -19,7 +19,7 @@ const state = reactive<Partial<Schema>>({
 })
 
 const toast = useToast()
-const isSubmitting = ref(false)
+const isSubmitting = ref(false);
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
     event.preventDefault();

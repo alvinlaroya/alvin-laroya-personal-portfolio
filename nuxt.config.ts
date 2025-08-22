@@ -17,5 +17,12 @@ export default defineNuxtConfig({
     url: process.env.SUPABASE_UR,
     key: process.env.SUPABASE_KEY,
     redirect: false,
-  }
+    /* redirectOptions: {
+      login: '/login',
+      callback: '/confirm',
+      include: ['/cms(/*)?'],
+      exclude: ['/', '/reviews'],
+      saveRedirectToCookie: false,
+    } */
+  },
 })
