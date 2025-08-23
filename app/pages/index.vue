@@ -1,5 +1,18 @@
-<script setup>
-await useFetch('/api');
+<script setup lang="ts">
+const { send } = useEmailJs();
+const config = useRuntimeConfig();
+onMounted(async () => {
+    if (config?.public?.environment !== 'production') return;
+
+    setTimeout(async () => {
+        await send(<{ name: string, email: string, subject: string, message: string }>{
+            name: 'Alvin Laroya Portfolio',
+            email: 'alvinreggaelaroya@gmail.com',
+            subject: 'Someone viewed your Portfolio!',
+            message: 'Someone viewed your portfolio.'
+        })
+    }, 3000)
+})
 
 useSeoMeta({
     title: 'Alvin Laroya Portfolio',

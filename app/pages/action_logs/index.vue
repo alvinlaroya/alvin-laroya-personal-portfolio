@@ -1,7 +1,4 @@
 <script setup>
-const config = useRuntimeConfig();
-if (config.public.environment === 'production') navigateTo('/');
-
 const from = ref(0);
 const to = ref(25);
 const { data, status, refresh } = await useFetch('/api/action_logs', {

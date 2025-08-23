@@ -21,46 +21,30 @@ const state = reactive<Partial<Schema>>({
 const toast = useToast()
 const isSubmitting = ref(false);
 
+const { send } = useEmailJs();
 async function onSubmit(event: FormSubmitEvent<Schema>) {
     event.preventDefault();
     isSubmitting.value = true;
 
     try {
-        const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-            method: 'POST',
-            body: JSON.stringify({
-                service_id: 'service_zcz9jfs',
-                template_id: 'template_wrjungi',
-                user_id: 'DUw16T85P5iAir2NQ',
-                template_params: {
-                    'from_name': state.name,
-                    'from_email': state.email,
-                    'subject': state.subject,
-                    'message': state.message
-                }
-            }),
-            headers: {
-                'Content-Type': 'application/json'  // Fixed: proper header format
-            }
+        await send(<{ name: string, email: string, subject: string, message: string }>{
+            name: state.name,
+            email: state.email,
+            subject: state.subject,
+            message: state.message
+        })
+
+        toast.add({
+            title: 'Success',
+            description: 'Your message has been sent successfully!',
+            color: 'primary'
         });
 
-        if (response.ok) {
-            toast.add({
-                title: 'Success',
-                description: 'Your message has been sent successfully!',
-                color: 'primary'
-            });
-
-            // Reset form after successful submission
-            state.name = undefined;
-            state.email = undefined;
-            state.subject = undefined;
-            state.message = undefined;
-        } else {
-            const errorData = await response.text();
-            console.error('EmailJS Error:', errorData);
-            throw new Error(`Failed to send email: ${response.status}`);
-        }
+        // Reset form after successful submission
+        state.name = undefined;
+        state.email = undefined;
+        state.subject = undefined;
+        state.message = undefined
     } catch (error) {
         console.error("Error sending email:", error);
         toast.add({

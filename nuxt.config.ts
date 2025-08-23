@@ -9,6 +9,11 @@ export default defineNuxtConfig({
       environment: process.env.NUXT_PUBLIC_DEV_ENVIRONMENT,
       adminKey: process.env.NUXT_PUBLIC_ADMIN_KEY,
       n8nWebhookUrl: process.env.NUXT_PUBLIC_N8N_WEBHOOK_URL,
+      emailJs: {
+        serviceId: process.env.NUXT_PUBLIC_EMAILJS_SERVICE_ID,
+        templateId: process.env.NUXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        userId: process.env.NUXT_PUBLIC_EMAILJS_USER_ID
+      }
     },
     spotifyClientId: process.env.SPOTIFY_CLIENT_ID,
     spotifyClientSecret: process.env.SPOTIFY_CLIENT_SECRET,
