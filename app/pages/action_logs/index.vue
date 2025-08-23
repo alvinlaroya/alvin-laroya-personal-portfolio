@@ -94,7 +94,7 @@ const formatDate = (dateString) => {
                     <div @click="readHandler(log.id, log.unread)"
                         class="flex flex-row justify-between items-center w-full py-2 px-2 cursor-pointer hover:bg-gray-800"
                         :class="{
-                            'bg-[#03101d] border-l-primary border-l-1': log.unread,
+                            'bg-gray-transparent border-l-primary border-l-1': log.unread,
                             'bg-base': !log.unread,
                         }">
 
@@ -111,7 +111,9 @@ const formatDate = (dateString) => {
                                 <Icon v-if="log.action === 'chat_bot'" name="lucide:bot" size="1.4rem"
                                     :class="log.unread ? 'text-primary' : 'text-gray-500'" />
                             </div>
-                            <p style="margin-left: 0.5rem">{{ log.description }}</p>
+                            <p style="margin-left: 0.5rem" :class="log.unread ? 'text-white font-semibold' : 'text-gray-500'">
+                                {{ log.description }}
+                            </p>
                         </div>
                         <span class="text-gray-500 text-xs">
                             {{ new Date(log.created_at).toLocaleTimeString('en-US', {
