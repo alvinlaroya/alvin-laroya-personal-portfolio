@@ -2,14 +2,6 @@
 const { data, status, refresh } = await useFetch('/api/reviews?from=0&to=2')
 const reviews = computed(() => data.value.reviews.data);
 const count = computed(() => data.value.reviews.count);
-
-const { create } = useLogs();
-const viewAllHandler = async () => {
-    await create({
-        action: 'view_reviews',
-        description: `Someone viewed your reviews page.`,
-    })
-}
 </script>
 
 

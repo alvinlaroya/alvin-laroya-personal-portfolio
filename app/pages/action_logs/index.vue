@@ -108,7 +108,7 @@ const formatDate = (dateString) => {
                                 <Icon v-if="log.action === 'download_cv'" name="lucide:download" size="1.4rem"
                                     :class="log.unread ? 'text-primary' : 'text-gray-500'" />
                                 <Icon
-                                    v-if="log.action === 'view_project' || log.action === 'view_reviews' || log.action === 'view_experience'"
+                                    v-if="log.action === 'view_project' || log.action === 'view_reviews' || log.action === 'view_experience' || log.action === 'view_site'"
                                     name="lucide:eye" size="1.4rem"
                                     :class="log.unread ? 'text-primary' : 'text-gray-500'" />
                                 <Icon v-if="log.action === 'chat_bot'" name="lucide:bot" size="1.4rem"
