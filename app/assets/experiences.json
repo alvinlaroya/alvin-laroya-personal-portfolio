@@ -1,7 +1,7 @@
 {
     "experiences": [
         {
-            "position": "Software Engineer (2022-June 2025) - Contract",
+            "position": "Software Engineer (2022-2025) - Contract",
             "frontend": "Vue/Nuxt, Svelte/Sveltekit, Shadcn Svelte / TailwindCSS",
             "backend": "Storefront, Shopify GraphQL, Knex.js, PostgreSQL, Drizzle ORM, Supabase",
             "company": "Pilothouse Digital",
