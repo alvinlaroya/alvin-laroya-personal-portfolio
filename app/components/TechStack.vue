@@ -94,6 +94,9 @@ const backendStacks = [
         name: "Express.js",
         svg: "/svg/express.svg"
     }, {
+        name: "Laravel",
+        svg: "/svg/laravel.svg"
+    }, {
         name: "PostgreSQL",
         svg: "/svg/postgresql.svg"
     }, {
