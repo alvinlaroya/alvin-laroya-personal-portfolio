@@ -114,7 +114,8 @@ const backendStacks = [
         name: "GraphQL",
         svg: "/svg/graphql.svg"
     }, {
-        name: "Storefront API"
+        name: "Storefront API",
+        svg: "/svg/storefront.svg"
     }
 ];
 const filteredBackend = computed(() => {
