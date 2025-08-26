@@ -1,6 +1,14 @@
 <script setup>
 const projects = [
     {
+        src: '/projects/order-crud.webp',
+        link: 'https://github.com/alvinlaroya/react-express-sqlite-crud',
+        title: 'Order CRUD App',
+        description: 'Order Management CRUD application utilizing React/React-hook-form, Shad/cn UI, Zod, Node.js, Express, SQLite and Jest Testing.',
+        stacks: ['react', 'next', 'shadcn', 'tailwind', 'node', 'express', 'sqlite'],
+        isInternal: false
+    },
+    {
         src: '/projects/wise.webp',
         link: 'https://www.loom.com/share/2b41e989f13e42d88dfb49b4bc8a733b',
         title: 'Wise - Headless Shopify CMS',
