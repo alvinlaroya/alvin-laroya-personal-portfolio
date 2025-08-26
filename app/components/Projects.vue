@@ -26,7 +26,7 @@ const projects = [
     },
     {
         src: '/projects/skood.webp',
-        link: 'https://github.com/alvinlaroya/vue-vuex-vuetify-router/tree/master',
+        link: 'https://www.instagram.com/skood.ph/',
         title: 'Skood',
         description: 'A dashboard application for managing restaurant clients and their food products, making it easy to add, organize, and track client details and menus.',
         stacks: ['vue', 'vuetify', 'firebase'],
@@ -41,8 +41,24 @@ const projects = [
         isInternal: false
     },
     {
+        src: '/projects/manlybands.webp',
+        link: 'https://manlybands.com/collections/all-products',
+        title: 'Manly Bands',
+        description: 'Developed a custom Shopify store powered by Nuxt.js and the Shopify Storefront API, delivering a fast, headless e-commerce experience with optimized performance, seamless product browsing, and a fully tailored frontend design',
+        stacks: ['vue', 'nuxt', 'tailwind'],
+        isInternal: false
+    },
+    {
+        src: '/projects/taft.webp',
+        link: 'https://brett.tech/products/info-orbs-full-dev-kit',
+        title: 'Taft Clothing',
+        description: 'Developed a custom Shopify store powered by Nuxt.js and the Shopify Storefront API, delivering a fast, headless e-commerce experience with optimized performance, seamless product browsing, and a fully tailored frontend design.',
+        stacks: ['vue', 'nuxt', 'tailwind'],
+        isInternal: false
+    },
+    {
         src: '/projects/brett-tech.webp',
-        link: 'https://brett-tech-store.netlify.app/collections/frontpage',
+        link: 'https://brett.tech/products/info-orbs-full-dev-kit',
         title: 'Brett Tech Store',
         description: 'Developed a custom Shopify store powered by Nuxt.js and the Shopify Storefront API, delivering a fast, headless e-commerce experience with optimized performance, seamless product browsing, and a fully tailored frontend design.',
         stacks: ['vue', 'nuxt', 'tailwind'],
