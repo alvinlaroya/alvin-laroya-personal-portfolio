@@ -21,7 +21,7 @@ useSeoMeta({
 </script>
 
 <template>
-    <!-- Main Content Area -->
+<!-- Main Content Area -->
     <main class="flex-1 min-w-0 p-4 lg:pl-4 flex flex-col space-y-9">
         <AboutMe />
         <Experiences />

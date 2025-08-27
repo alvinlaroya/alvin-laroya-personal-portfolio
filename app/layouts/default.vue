@@ -6,7 +6,7 @@ provide('admin', admin)
 </script>
 
 <template>
-    <div class="w-screen bg-[#021526] text-[#eee] scroll-smooth">
+    <div class="w-full bg-[#021526] text-[#eee] scroll-smooth">
         <Header :isCms="false" />
         <div class="max-w-screen-lg w-full mx-auto">
             <!-- Container for Sidebar and Main Content -->
