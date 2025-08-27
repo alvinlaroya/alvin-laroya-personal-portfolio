@@ -70,7 +70,7 @@ const formatDate = (dateString) => {
 
 
 <template>
-    <main class="flex-1 min-h-screen px-2 py-4 flex flex-col space-y-4">
+    <main class="flex-1 min-w-0 p-4 lg:pl-4 flex flex-col space-y-9">
         <div class="w-full flex justify-between bg-[#03101d] p-4 rounded-lg">
             <h2>Logs History</h2>
             <div class="flex space-x-3">
@@ -111,7 +111,8 @@ const formatDate = (dateString) => {
                                 <Icon v-if="log.action === 'chat_bot'" name="lucide:bot" size="1.4rem"
                                     :class="log.unread ? 'text-primary' : 'text-gray-500'" />
                             </div>
-                            <p style="margin-left: 0.5rem" :class="log.unread ? 'text-white font-semibold' : 'text-gray-500'">
+                            <p style="margin-left: 0.5rem"
+                                :class="log.unread ? 'text-white font-semibold' : 'text-gray-500'">
                                 {{ log.description }}
                             </p>
                         </div>

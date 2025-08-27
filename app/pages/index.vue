@@ -22,7 +22,7 @@ useSeoMeta({
 
 <template>
     <!-- Main Content Area -->
-    <main class="flex-1 min-h-screen p-4 lg:pr-4 flex flex-col space-y-9">
+    <main class="flex-1 min-w-0 p-4 lg:pl-4 flex flex-col space-y-9">
         <AboutMe />
         <Experiences />
         <USeparator />

@@ -14,7 +14,7 @@ const count = computed(() => data.value.reviews.count);
             <p class="text-gray-600 mb-7">
                 What people say about my portfolio.
             </p>
-            <UButton label="View all" to="/reviews" @click="viewAllHandler" size="sm" class="h-8" />
+            <UButton label="View all" to="/reviews" size="sm" class="h-8" />
         </div>
 
         <div class="grid grid-cols-1">

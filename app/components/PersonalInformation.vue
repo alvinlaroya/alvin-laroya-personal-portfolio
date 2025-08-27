@@ -26,11 +26,11 @@ const informations = [
 </script>
 
 <template>
-    <aside class="flex lg:sticky top-16 lg:h-[calc(100vh-4rem)] w-full lg:w-76">
-        <div class="flex flex-row lg:flex-col space-x-4 p-4 w-full space-y-4 tracking-wide">
+    <aside class="flex lg:sticky top-16 sm:h-[calc(100vh-4rem)] w-full md:w-76">
+        <div class="flex flex-row sm:flex-col space-x-4 p-4 w-full space-y-4 tracking-wide">
             <div class="flex justify-center items-center object-bottom">
                 <NuxtImg src="/profile2.webp" :placeholder="[200, 200]" fit="cover" alt="profile-image" width="300"
-                    height="300" class="w-[140px] lg:w-[200px] rounded-full" />
+                    height="300" class="w-[140px] sm:w-[200px] rounded-full" />
             </div>
             <div class="flex flex-col justify-center">
                 <h2 class="text-left lg:text-center text-xl lg:text-2xl mb-2 font-semibold">Alvin Laroya</h2>
@@ -54,7 +54,7 @@ const informations = [
                             Nature Travel</span>
                     </div>
                 </div>
-                <Connections class="hidden lg:block" />
+                <Connections class="hidden sm:block" />
             </div>
         </div>
     </aside>

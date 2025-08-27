@@ -41,7 +41,7 @@ const developmentModal = ref(false);
 </script>
 
 <template>
-    <main class="flex-1 min-h-screen px-2 py-4 flex flex-col space-y-9">
+    <main class="flex-1 min-w-0 p-4 lg:pl-4 flex flex-col space-y-9">
         <div class="px-4">
             <UBreadcrumb :items="[
                 {
