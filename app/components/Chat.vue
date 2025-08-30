@@ -98,6 +98,10 @@ const handleKeyPress = (event) => {
         sendMessage();
     }
 };
+
+onMounted(() => {
+    isOpen.value = !isOpen.value;
+});
 </script>
 
 <template>
