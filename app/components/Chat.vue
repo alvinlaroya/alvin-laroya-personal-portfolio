@@ -100,7 +100,9 @@ const handleKeyPress = (event) => {
 };
 
 onMounted(() => {
-    isOpen.value = !isOpen.value;
+    setTimeout(() => {
+        isOpen.value = !isOpen.value;
+    }, 2000)
 });
 </script>
 
