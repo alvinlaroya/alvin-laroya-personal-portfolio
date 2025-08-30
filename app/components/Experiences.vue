@@ -1,17 +1,23 @@
 <script setup>
-import { experiences } from '~/assets/experiences.json'
+import draggable from "vuedraggable";
+import experiencesJson from '~/assets/experiences.json';
+import { ref } from "vue";
+
+const experiences = ref(experiencesJson.experiences); // make it reactive
 const openDrawer = ref(false);
 const selectedExperience = ref(null);
 const { create } = useLogs();
+
 const selectExperienceHandler = async (value) => {
     selectedExperience.value = value;
     openDrawer.value = true;
     await create({
-        action: 'view_experience',
+        action: "view_experience",
         description: `Someone viewed your experience in ${value.company}`,
-    })
-}
-const closeDrawer = () => openDrawer.value = !openDrawer.value;
+    });
+};
+
+const closeDrawer = () => (openDrawer.value = !openDrawer.value);
 
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -21,29 +27,35 @@ function capitalize(str) {
 <template>
     <div id="experience">
         <h2 class="text-xl font-semibold mb-3">Experiences</h2>
-        <div v-for="(exp, i) in experiences" :key="i" class="bg-[#03101d] p-4 rounded-md text-sm space-y-1.5 my-2.5">
-            <h2 class="font-semibold text-sm tracking-wide">{{ exp.position }}</h2>
-            <div class="flex space-x-2 text-gray-400 text-xs tracking-wide">
-                <h2 class="font-semibold">Company:</h2>
-                <div>
-                    <span class="text-gray-200">{{ exp.company }}</span>
-                    <span class="mx-2">•</span>
-                    <Icon name="lucide:map-pin" size="0.8rem" class="-mb-0.5 mr-2" />
-                    <span class="text-gray-200">{{
-                        exp.address }}</span>
+        <p class="-mt-2 text-gray-400 text-sm">Try dragging and dropping the experience cards to change their order.</p>
+        <draggable v-model="experiences" item-key="company" animation="200" class="space-y-2">
+            <template #item="{ element: exp, index: i }">
+                <div class="bg-[#03101d] p-4 rounded-md text-sm space-y-1.5 my-2.5 cursor-move">
+                    <h2 class="font-semibold text-sm tracking-wide">{{ exp.position }}</h2>
+                    <div class="flex space-x-2 text-gray-400 text-xs tracking-wide">
+                        <h2 class="font-semibold">Company:</h2>
+                        <div>
+                            <span class="text-gray-200">{{ exp.company }}</span>
+                            <span class="mx-2">•</span>
+                            <Icon name="lucide:map-pin" size="0.8rem" class="-mb-0.5 mr-2" />
+                            <span class="text-gray-200">{{ exp.address }}</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between">
+                        <UAvatarGroup size="xs" :max="4" class="mt-2">
+                            <UTooltip v-for="stack in exp.stacks" :text="stack" :key="stack">
+                                <img :src="`/svg/${stack}.svg`" class="h-5 w-5" :alt="stack" />
+                            </UTooltip>
+                        </UAvatarGroup>
+                        <UButton @click="selectExperienceHandler(exp)" trailing-icon="i-lucide-arrow-right"
+                            class="cursor-pointer mt-1" size="sm">View More
+                        </UButton>
+                    </div>
                 </div>
-            </div>
-            <div class="flex justify-between">
-                <UAvatarGroup size="xs" :max="4" class="mt-2">
-                    <UTooltip v-for="stack in exp.stacks" :text="stack">
-                        <img :src="`/svg/${stack}.svg`" class="h-5 w-5" :alt="stack" />
-                    </UTooltip>
-                </UAvatarGroup>
-                <UButton @click="selectExperienceHandler(exp)" trailing-icon="i-lucide-arrow-right"
-                    class="cursor-pointer mt-1" size="sm">View More
-                </UButton>
-            </div>
-        </div>
+            </template>
+        </draggable>
+
+        <!-- Drawer -->
         <UDrawer direction="right" v-model:open="openDrawer" :handle="false" inset>
             <template #content>
                 <div class="w-[40rem] p-3 lg:p-6 flex flex-col space-y-5 flex-nowrap overflow-y-auto">
@@ -52,7 +64,10 @@ function capitalize(str) {
                             class="cursor-pointer mt-1" size="sm">
                         </UButton>
                     </div>
-                    <h2 class="font-semibold text-lg">{{ selectedExperience.position }}</h2>
+
+                    <h2 class="font-semibold text-lg">
+                        {{ selectedExperience.position }}
+                    </h2>
                     <div class="flex space-x-2 text-sm tracking-wider">
                         <Icon name="lucide:building-2" size="1rem" />
                         <span class="text-gray-300">{{ selectedExperience.company }}</span>

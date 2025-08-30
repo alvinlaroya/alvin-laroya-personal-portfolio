@@ -49,7 +49,7 @@ const informations = [
                         <h2 class="text-sm text-gray-200">Pronounce: <span class="text-gray-400">He/Him</span></h2>
                     </div>
                     <div class="mt-3">
-                        <h2 class="text-sm text-gray-200">Hobbies:</h2>
+                        <h2 class="text-sm text-gray-200">Interests:</h2>
                         <span class="text-gray-400 text-xs">Coding • Playing Guitar • Singing • FPS Gaming • Coffee •
                             Nature Travel</span>
                     </div>

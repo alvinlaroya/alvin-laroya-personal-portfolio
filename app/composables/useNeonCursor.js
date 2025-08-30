@@ -5,10 +5,11 @@ import { neonCursor } from "threejs-toys";
 
 export function useNeonCursor(options = {}) {
   const container = ref(null);
-  let cleanup = null;
+  const isEnabled = ref(false);
+  let cleanup = null; // this will be a function returned by neonCursor
 
-  onMounted(() => {
-    if (container.value) {
+  const enable = () => {
+    if (container.value && !cleanup) {
       cleanup = neonCursor({
         el: container.value,
         THREE,
@@ -25,7 +26,7 @@ export function useNeonCursor(options = {}) {
         ...options,
       });
 
-      // 👇 Make sure canvas goes to background
+      // send canvas to background
       const canvas = container.value.querySelector("canvas");
       if (canvas) {
         canvas.style.position = "absolute";
@@ -33,17 +34,28 @@ export function useNeonCursor(options = {}) {
         canvas.style.left = "0";
         canvas.style.width = "100%";
         canvas.style.height = "100%";
-        canvas.style.zIndex = "-1"; // behind all content
+        canvas.style.zIndex = "-1";
       }
+
+      isEnabled.value = true;
     }
+  };
+
+  const disable = () => {
+    if (cleanup) {
+      cleanup();   // ✅ call cleanup function
+      cleanup = null;
+      isEnabled.value = false;
+    }
+  };
+
+  onMounted(() => {
+    enable(); // start enabled by default
   });
 
   onBeforeUnmount(() => {
-    if (cleanup) {
-      cleanup();
-      cleanup = null;
-    }
+    disable();
   });
 
-  return { container };
+  return { container, isEnabled, enable, disable };
 }
