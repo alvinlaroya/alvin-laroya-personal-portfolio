@@ -83,8 +83,8 @@ const tabs = {
 }
 
 const items = ref([
-    { label: 'Carousel', icon: 'lucide:square-play', value: 'carousel' },
-    { label: 'Grid', icon: 'lucide:grid-2x2', value: 'grid' }
+    { label: '', icon: 'lucide:square-play', value: 'carousel' },
+    { label: '', icon: 'lucide:grid-2x2', value: 'grid' }
 ])
 
 const selectedTab = ref('carousel')
@@ -103,7 +103,7 @@ const active = computed({
     <div id="portfolio">
         <div class="w-full flex justify-between">
             <h2 class="text-xl font-semibold">Projects</h2>
-            <div class="w-64">
+            <div class="w-32">
                 <UTabs v-model="active" :content="false" :unmount-on-hide="false" :items="items" class="w-full" />
             </div>
         </div>
