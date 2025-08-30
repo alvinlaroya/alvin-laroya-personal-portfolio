@@ -17,8 +17,8 @@ provide('admin', admin)
                 <PersonalInformation :class="{ 'hidden lg:block': route.path === '/reviews' }" />
                 <slot />
             </div>
-            <Chat />
         </div>
         <Footer class="relative z-10" />
+        <Chat />
     </div>
 </template>
