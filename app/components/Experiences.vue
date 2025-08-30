@@ -30,26 +30,31 @@ function capitalize(str) {
         <p class="-mt-2 text-gray-400 text-sm">Try dragging and dropping the experience cards to change their order.</p>
         <draggable v-model="experiences" item-key="company" animation="200" class="space-y-2">
             <template #item="{ element: exp, index: i }">
-                <div class="bg-[#03101d] p-4 rounded-md text-sm space-y-1.5 my-2.5 cursor-move">
-                    <h2 class="font-semibold text-sm tracking-wide">{{ exp.position }}</h2>
-                    <div class="flex space-x-2 text-gray-400 text-xs tracking-wide">
-                        <h2 class="font-semibold">Company:</h2>
-                        <div>
-                            <span class="text-gray-200">{{ exp.company }}</span>
-                            <span class="mx-2">•</span>
-                            <Icon name="lucide:map-pin" size="0.8rem" class="-mb-0.5 mr-2" />
-                            <span class="text-gray-200">{{ exp.address }}</span>
+                <div class="bg-[#03101d] py-4 pl-2 pr-4 rounded-md text-sm space-y-1.5 my-2.5 cursor-move">
+                    <div class="flex w-full space-x-1 items-center">
+                        <Icon name="hugeicons:drag-drop-vertical" size="1.5rem" class="text-gray-500 -mt-1" />
+                        <div class="w-full">
+                            <h2 class="font-semibold text-sm tracking-wide">{{ exp.position }}</h2>
+                            <div class="flex space-x-2 text-gray-400 text-xs tracking-wide">
+                                <h2 class="font-semibold">Company:</h2>
+                                <div>
+                                    <span class="text-gray-200">{{ exp.company }}</span>
+                                    <span class="mx-2">•</span>
+                                    <Icon name="lucide:map-pin" size="0.8rem" class="-mb-0.5 mr-2" />
+                                    <span class="text-gray-200">{{ exp.address }}</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between">
+                                <UAvatarGroup size="xs" :max="4" class="mt-2">
+                                    <UTooltip v-for="stack in exp.stacks" :text="stack" :key="stack">
+                                        <img :src="`/svg/${stack}.svg`" class="h-5 w-5" :alt="stack" />
+                                    </UTooltip>
+                                </UAvatarGroup>
+                                <UButton @click="selectExperienceHandler(exp)" trailing-icon="i-lucide-arrow-right"
+                                    class="cursor-pointer mt-1" size="sm">View More
+                                </UButton>
+                            </div>
                         </div>
-                    </div>
-                    <div class="flex justify-between">
-                        <UAvatarGroup size="xs" :max="4" class="mt-2">
-                            <UTooltip v-for="stack in exp.stacks" :text="stack" :key="stack">
-                                <img :src="`/svg/${stack}.svg`" class="h-5 w-5" :alt="stack" />
-                            </UTooltip>
-                        </UAvatarGroup>
-                        <UButton @click="selectExperienceHandler(exp)" trailing-icon="i-lucide-arrow-right"
-                            class="cursor-pointer mt-1" size="sm">View More
-                        </UButton>
                     </div>
                 </div>
             </template>
