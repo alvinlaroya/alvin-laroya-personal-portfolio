@@ -49,6 +49,7 @@ const filteredFrontend = computed(() => {
         stack.name.toLowerCase().includes(search.value.toLowerCase())
     );
 });
+const hoveredFrontend = reactive([]);
 
 const stateManagementStacks = [
     {
@@ -73,6 +74,7 @@ const filteredStateManagement = computed(() => {
         stack.name.toLowerCase().includes(search.value.toLowerCase())
     );
 });
+const hoveredStateManagement = reactive([]);
 
 const backendStacks = [
     {
@@ -127,6 +129,7 @@ const filteredBackend = computed(() => {
         stack.name.toLowerCase().includes(search.value.toLowerCase())
     );
 });
+const hoveredBackend = reactive([]);
 
 const uiUxDesignStacks = [
     {
@@ -146,6 +149,7 @@ const filteredDesign = computed(() => {
         stack.name.toLowerCase().includes(search.value.toLowerCase())
     );
 });
+const hoveredDesign = reactive([]);
 
 const aiStacks = [
     {
@@ -161,6 +165,7 @@ const aiStacks = [
         svg: "/svg/claude.svg"
     }
 ]
+const hoveredAi = reactive([]);
 </script>
 
 <template>
@@ -174,8 +179,9 @@ const aiStacks = [
             <div>
                 <h2 class="font-semibold text-sm">Frontend Technologies:</h2>
                 <div v-if="filteredFrontend.length > 0" class="flex flex-wrap mt-2 gap-1.5">
-                    <div v-for="stack in filteredFrontend"
-                        class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs items-center text-gray-300 hover:bg-primary hover:text-black">
+                    <div v-for="stack in filteredFrontend" @mouseover="() => hoveredFrontend.push(stack.name)"
+                        class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs items-center cursor-pointer  hover:text-black"
+                        :class="hoveredFrontend.includes(stack.name) ? 'bg-primary text-black' : 'text-gray-300'">
                         <div v-if="stack?.svg !== undefined" class="flex">
                             <img :src="stack.svg" class="w-4 h-4" alt="">
                         </div>
@@ -189,8 +195,9 @@ const aiStacks = [
             <div class="mt-5">
                 <h2 class="font-semibold text-sm">State Management:</h2>
                 <div v-if="filteredStateManagement.length > 0" class="flex flex-wrap mt-2 gap-1.5">
-                    <div v-for="stack in filteredStateManagement"
-                        class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs items-center text-gray-300 hover:bg-primary hover:text-black">
+                    <div v-for="stack in filteredStateManagement" @mouseover="() => hoveredStateManagement.push(stack.name)"
+                        class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs items-center cursor-pointer  hover:text-black"
+                        :class="hoveredStateManagement.includes(stack.name) ? 'bg-primary text-black' : 'text-gray-300'">
                         <div v-if="stack?.svg !== undefined" class="flex">
                             <img :src="stack.svg" class="w-4 h-4" alt="">
                         </div>
@@ -204,8 +211,9 @@ const aiStacks = [
             <div class="mt-5">
                 <h2 class="font-semibold text-sm">Backend Technologies:</h2>
                 <div v-if="filteredBackend.length > 0" class="flex flex-wrap mt-2 gap-1.5">
-                    <div v-for="stack in filteredBackend"
-                        class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs items-center text-gray-300 hover:bg-primary hover:text-black">
+                    <div v-for="stack in filteredBackend" @mouseover="() => hoveredBackend.push(stack.name)"
+                        class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs items-center cursor-pointer  hover:text-black"
+                        :class="hoveredBackend.includes(stack.name) ? 'bg-primary text-black' : 'text-gray-300'">
                         <div v-if="stack?.svg !== undefined" class="flex">
                             <img :src="stack.svg" class="w-4 h-4" alt="">
                         </div>
@@ -219,8 +227,9 @@ const aiStacks = [
             <div class="mt-5">
                 <h2 class="font-semibold text-sm">UI/UX Design:</h2>
                 <div v-if="filteredDesign.length > 0" class="flex flex-wrap mt-2 gap-1.5">
-                    <div v-for="stack in filteredDesign"
-                        class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs items-center text-gray-300 hover:bg-primary hover:text-black">
+                    <div v-for="stack in filteredDesign" @mouseover="() => hoveredDesign.push(stack.name)"
+                        class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs items-center cursor-pointer  hover:text-black"
+                        :class="hoveredDesign.includes(stack.name) ? 'bg-primary text-black' : 'text-gray-300'">
                         <div v-if="stack?.svg !== undefined" class="flex">
                             <img :src="stack.svg" class="w-4 h-4" alt="">
                         </div>
@@ -234,8 +243,9 @@ const aiStacks = [
             <div class="mt-5">
                 <h2 class="font-semibold text-sm">AI/LLM Tools:</h2>
                 <div class="flex flex-wrap mt-2 gap-1.5">
-                    <div v-for="stack in aiStacks"
-                        class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs items-center text-gray-300 hover:bg-primary hover:text-black">
+                    <div v-for="stack in aiStacks" @mouseover="() => hoveredAi.push(stack.name)"
+                        class="flex space-x-2 border border-gray-500 px-2 py-1 rounded-md text-xs items-center cursor-pointer  hover:text-black"
+                        :class="hoveredAi.includes(stack.name) ? 'bg-primary text-black' : 'text-gray-300'">
                         <div v-if="stack?.svg !== undefined" class="flex">
                             <img :src="stack.svg" class="w-4 h-4" alt="">
                         </div>

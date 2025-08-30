@@ -21,7 +21,7 @@ const testimonials = [
     {
         text: "Alvin is a reliable and talented developer. They’re great at solving problems, writing clean code, and working well with the team.",
         author: "Allan Rosero",
-        position: "Programmer I, DSWD Region 1",
+        position: "Programmer III, DSWD Region 1",
         avatar: "/testimonials/allan.webp",
     },
 ]; 
