@@ -20,16 +20,16 @@
             ],
             "roles": [
                 {
-                    "task": "Engineered a Headless CMS E-commerce solution for Shopify stores, managing backend migrations and services.",
+                    "task": "Developerd a Headless CMS E-commerce solution for Shopify stores through backend migrations and service integrations, that had an impact on store scalability and modernization.",
                     "subtask": [
-                        "Incorporated an AI feature to generate a component store, utilizing Svelte-based components and Tailwind CSS for styling",
-                        "Convert the Liquid-based Shopify store into a modern JavaScript framework using SvelteKit for a lightweight and high-performance site.",
-                        "Developed a robust drag-and-drop functionality for seamlessly adding modules to site pages, including the homepage, collection pages, and product detail pages (PDP).",
+                        "Implement AI-powered component store generation through Svelte components and Tailwind CSS, that had an impact on faster development cycles.",
+                        "Achieved a high-performance Shopify store conversion through SvelteKit migration, that had an impact on site speed and user experience.",
+                        "Implemented seamless drag-and-drop functionality through custom module development, that had an impact on store page flexibility and usability.",
                         "Created multiple modules (components) for a store template, enhancing the homepage, collection pages, and product detail pages (PDP).",
-                        "Implemented comprehensive cart functionality using Svelte, integrating Shopify's Storefront GraphQL API to streamline data mutations.",
-                        "Established template theming with DaisyUI to bolster store branding.",
-                        "Integrated third-party Shopify libraries, including Rebuy for upselling functionalities and various review APIs.",
-                        "Designed and executed modules/component tests using vitest.",
+                        "Implemented comprehensive cart functionality through Storefront GraphQL API integration, that had an impact on efficient e-commerce transactions.",
+                        "Enhanced store branding through DaisyUI theming, that had an impact on consistent customer experience.",
+                        "Added upselling capabilities through third-party Shopify integrations (Rebuy, reviews API), that had an impact on customer engagement and revenue.",
+                        "Achieved reliable software quality through Vitest-based module and component testing, that had an impact on product stability.",
                         "Formulated storefront GraphQL queries and mutations for headless CMS architecture."
                     ]
                 },
@@ -58,15 +58,15 @@
             ],
             "roles": [
                 {
-                    "task": "Developed the frontend of the Chassis/System for a video interview platform to be used by seven users, including video editors.",
+                    "task": "Developed a frontend system for a video interview platform through React/Next.js development, that had an impact on productivity for seven users including video editors.",
                     "subtask": []
                 },
                 {
-                    "task": "Maintaining the chassis/system for social media chassis currently being used by the US team.",
+                    "task": "Achieved continuous system reliability through maintenance of the social media chassis, that had an impact on smooth US team operations.",
                     "subtask": []
                 },
                 {
-                    "task": "Developed a chassis/system for the company’s digital asset library (similar to Google Drive) facilitating the uploadinguploading and downloading of various asset types, such as images and videos.",
+                    "task": "Developed a digital asset library system through Node.js, MongoDB, and React, that had an impact on secure file storage and accessibility.",
                     "subtask": []
                 }
             ]
@@ -84,7 +84,7 @@
             ],
             "roles": [
                 {
-                    "task": "Migrated the logistics web application from a Laravel Blade-based application to a Laravel Vue Single Page Application (SPA), enhancing user experience and performance.",
+                    "task": "Migrating of a logistics web application through Laravel Vue SPA implementation, that had an impact on improved user experience and system performance.",
                     "subtask": []
                 }
             ]
@@ -107,10 +107,8 @@
                 {
                     "task": "Developed Skood (Admin Dashboard) Food Delivery App of Baguio City.",
                     "subtask": [
-                        "Created dashboard for Admin (Company)",
-                        "Created dashboard for sellers (Restaurant owner)",
-                        "Created dashboard for riders (Delivery Rider)",
-                        "Developed Skood (server) for automatic backend dispatching of incoming orders"
+                        "Achieved a city-wide food delivery platform (Skood) through dashboards for admins, sellers, and riders, that had an impact on efficient order dispatching and local commerce growth.",
+                        "Implemented backend dispatching automation through server-side Node.js and Firebase, that had an impact on faster order processing and operational efficiency."
                     ]
                 }
             ]

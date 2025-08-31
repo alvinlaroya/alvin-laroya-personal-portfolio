@@ -6,6 +6,13 @@ const openReviewModal = () => openModal.value = !openModal.value;
 
 provide('open', openModal)
 
+const route = useRoute();
+watch(() => route.query.write_review, (newVal) => {
+    if (newVal === 'true') {
+        openModal.value = true;
+    }
+}, { immediate: true }) 
+
 const from = ref(0);
 const to = ref(7);
 const { data, status, refresh } = await useFetch('/api/reviews', {

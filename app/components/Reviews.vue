@@ -14,7 +14,10 @@ const count = computed(() => data.value.reviews.count);
             <p class="text-gray-600 mb-7">
                 What people say about my portfolio.
             </p>
-            <UButton label="View all" to="/reviews" size="sm" class="h-8" />
+            <div class="flex space-x-3">
+                <UButton label="View all" to="/reviews" size="sm" class="h-8" />
+                <UButton label="Write a Review" color="secondary" to="/reviews?write_review=true" size="sm" class="h-8" />
+            </div>
         </div>
 
         <div class="grid grid-cols-1">
