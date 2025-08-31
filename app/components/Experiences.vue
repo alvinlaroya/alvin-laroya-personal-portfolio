@@ -22,13 +22,36 @@ const closeDrawer = () => (openDrawer.value = !openDrawer.value);
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+const dragRefs = ref([]);
+const isOverDropArea = ref(false);
+function handleDragStart(evt) {
+    const idx = evt.oldIndex;
+    const el = dragRefs.value[idx];
+    if (el) {
+        evt.item.style.opacity = "1";
+        evt.dataTransfer.setDragImage(el, el.offsetWidth / 2, el.offsetHeight / 2);
+    }
+}
+
+function handleDragEnd(evt) {
+    if (evt.item) {
+        evt.item.style.opacity = "";
+    }
+    isOverDropArea.value = false;
+}
+
+function handleMove(evt) {
+    isOverDropArea.value = true;
+    return true;
+}
 </script>
 
 <template>
     <div id="experience">
         <h2 class="text-xl font-semibold mb-3">Experiences</h2>
         <p class="-mt-2 text-gray-400 text-sm">Try dragging and dropping the experience cards to change their order.</p>
-        <draggable v-model="experiences" item-key="company" animation="200" class="space-y-2">
+    <draggable v-model="experiences" item-key="company" animation="200" class="space-y-2" ghost-class="invisible-ghost" drag-class="drop-shadow-draggable" @start="handleDragStart" @end="handleDragEnd">
             <template #item="{ element: exp, index: i }">
                 <div class="bg-[#03101d] py-4 pl-2 pr-4 rounded-md text-sm space-y-1.5 my-2.5 cursor-move">
                     <div class="flex w-full space-x-1 items-center">
@@ -110,3 +133,19 @@ function capitalize(str) {
         </UDrawer>
     </div>
 </template>
+
+<style scoped>
+.invisible-ghost {
+    opacity: 1 !important;
+    background: black; /* Tailwind sky-500 for highlight */
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.25), 0 1.5px 6px 0 rgba(0,0,0,0.18);
+    border-radius: 0.5rem;
+    transition: box-shadow 0.2s, background 0.2s;
+    z-index: 10;
+}
+.drop-shadow-draggable {
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.25), 0 1.5px 6px 0 rgba(0,0,0,0.18);
+    transition: box-shadow 0.2s;
+    z-index: 10;
+}
+</style>

@@ -1,16 +1,12 @@
 <script setup>
-//import { useNeonCursor } from "@/composables/useNeonCursor";
-
 const config = useRuntimeConfig()
 const route = useRoute();
 const admin = route.query.fbclid === config.public.adminKey;
 provide('admin', admin)
-
-//const { container } = useNeonCursor();
 </script>
 
 <template>
-    <div ref="container" class="relative w-full min-h-screen text-[#eee] scroll-smooth">
+    <div class="relative w-full min-h-screen text-[#eee] scroll-smooth">
         <Header :isCms="false" />
         <div class="max-w-screen-lg w-full mx-auto relative z-10">
             <div class="flex flex-col md:flex-row">
